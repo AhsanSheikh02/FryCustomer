@@ -1,0 +1,9 @@
+{
+    "users":[
+        { "username": "kk1", "password": "123456", "email": "kk1@gmail.com" },
+        { "username": "kk2", "password": "123456", "email": "kk2@gmail.com" },
+        { "username": "kk3", "password": "123456", "email": "kk3@gmail.com" },
+        { "username": "kk4", "password": "123456", "email": "kk4@gmail.com" },
+        { "username": "kk5", "password": "123456", "email": "kk5@gmail.com" }
+    ]
+}

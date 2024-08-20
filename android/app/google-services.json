@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "695797921370",
+    "project_id": "firstresponderyoga-69652",
+    "storage_bucket": "firstresponderyoga-69652.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695797921370:android:41703269fad006b2b64a63",
+        "android_client_info": {
+          "package_name": "com.yogacustomer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695797921370-itkgr9c20v608nds2e1vap34km6n2qp5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yogacustomer",
+            "certificate_hash": "69a889b5422e97edb93da945cc102a7325cf9688"
+          }
+        },
+        {
+          "client_id": "695797921370-vr92n69k1qjbk87smven34kq5q54kojg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yogacustomer",
+            "certificate_hash": "c3fce43eebe9082ea0a347de584522efe7d4a75c"
+          }
+        },
+        {
+          "client_id": "695797921370-13k3p2pdgkd7ba22742tp22cggg4608s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYfDqvxUHLrA4H64QYIXHM-Q_Z4f-mOmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695797921370-13k3p2pdgkd7ba22742tp22cggg4608s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "695797921370-3se4ed73plse1t42mpioc8egdgvl1r3j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.FRY.apps"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
