@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primary_dark">#000000</color>
      <color name="white">#FFF</color>
 
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_dark">#000000</color>
+     <color name="white">#FFF</color>
+
+>>>>>>> 5d7e46d54251c7d169a76977d2fb87a9f9216716
 </resources>

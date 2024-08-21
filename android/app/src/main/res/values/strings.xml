@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 <resources>
     <string name="app_name">F.R.Y.</string>
     <string name="facebook_app_id">909590009857645</string>
     <string name="fb_login_protocol_scheme">fb909590009857645</string>
 </resources>
+=======
+<resources>
+    <string name="app_name">F.R.Y.</string>
+    <string name="facebook_app_id">909590009857645</string>
+    <string name="fb_login_protocol_scheme">fb909590009857645</string>
+</resources>
+>>>>>>> 5d7e46d54251c7d169a76977d2fb87a9f9216716

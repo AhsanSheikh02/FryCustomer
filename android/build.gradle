@@ -3,10 +3,10 @@
 buildscript {
     ext {
         buildToolsVersion = "29.0.3"
-        minSdkVersion = 24
-        compileSdkVersion = 34
-        targetSdkVersion = 34
-        ndkVersion = "26.1.10909125"
+        minSdkVersion = 23
+        compileSdkVersion = 33
+        targetSdkVersion = 33
+        ndkVersion = "20.1.5948944"
         googlePlayServicesAuthVersion = "19.0.0"
         googlePlayServicesVersion = "17.0.0" // default: "+"
         firebaseMessagingVersion = "22.0.0" // default: "+"
@@ -14,10 +14,10 @@ buildscript {
     }
     repositories {
         google()
-         mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath('com.android.tools.build:gradle:4.2.2')
+        classpath('com.android.tools.build:gradle:4.0.1')
         classpath 'com.google.gms:google-services:4.3.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -32,7 +32,7 @@ allprojects {
     }
     repositories {
         google()
-        mavenCentral()
+        jcenter()
         mavenLocal()
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
@@ -50,7 +50,7 @@ allprojects {
             project ->
                 if (project.hasProperty("android")) {
                     android {
-                        compileSdkVersion = 34
+                        compileSdkVersion = 33
                         buildToolsVersion = "29.0.3"
                     }
                 }
