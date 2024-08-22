@@ -1,4 +1,4 @@
-package com.yogacustomer
+package com.rndiffapp
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
