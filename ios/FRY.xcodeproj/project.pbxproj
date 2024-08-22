@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* YogaCustomerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* YogaCustomerTests.m */; };
-		00EEC7F62B418FD7F0560449 /* libPods-YogaCustomer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24667734EA8165B11B7B3717 /* libPods-YogaCustomer.a */; };
+		00E356F31AD99517003FC87E /* FRYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FRYTests.m */; };
+		00EEC7F62B418FD7F0560449 /* libPods-FRY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24667734EA8165B11B7B3717 /* libPods-FRY.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* YogaCustomerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* YogaCustomerTests.m */; };
-		347D05463A7B74B1BFDB8CCE /* libPods-YogaCustomer-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACD72BC73E3845343E6FAC2 /* libPods-YogaCustomer-tvOSTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* FRYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FRYTests.m */; };
+		347D05463A7B74B1BFDB8CCE /* libPods-FRY-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACD72BC73E3845343E6FAC2 /* libPods-FRY-tvOSTests.a */; };
 		60B37D0F25ED11CD009C4217 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60B37D0925ED11CD009C4217 /* Raleway-Light.ttf */; };
 		60B37D1025ED11CD009C4217 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60B37D0A25ED11CD009C4217 /* Raleway-Bold.ttf */; };
 		60B37D1125ED11CD009C4217 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60B37D0B25ED11CD009C4217 /* Raleway-Regular.ttf */; };
@@ -27,8 +27,8 @@
 		60EA98D4274CB22D002A659F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EA98D3274CB22D002A659F /* StoreKit.framework */; };
 		60FB2E9E2679F66800E2840D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60FB2E9D2679F66800E2840D /* GoogleService-Info.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		AE307B5939F5586EDD7721A7 /* libPods-YogaCustomer-YogaCustomerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F788C71E2AD2645BD2124E /* libPods-YogaCustomer-YogaCustomerTests.a */; };
-		FB2FBB9D6EE311CC75DAC6AB /* libPods-YogaCustomer-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11455A5463493DE27112B735 /* libPods-YogaCustomer-tvOS.a */; };
+		AE307B5939F5586EDD7721A7 /* libPods-FRY-FRYTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F788C71E2AD2645BD2124E /* libPods-FRY-FRYTests.a */; };
+		FB2FBB9D6EE311CC75DAC6AB /* libPods-FRY-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11455A5463493DE27112B735 /* libPods-FRY-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,38 +37,38 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = YogaCustomer;
+			remoteInfo = "FRY";
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "YogaCustomer-tvOS";
+			remoteInfo = "FRY-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* YogaCustomerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YogaCustomerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* FRYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FRYTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* YogaCustomerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaCustomerTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* FRYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FRYTests.m"; sourceTree = "<group>"; };
 		04EDF855A3AD478EA6D54D16 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		0ACD72BC73E3845343E6FAC2 /* libPods-YogaCustomer-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YogaCustomer-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		11455A5463493DE27112B735 /* libPods-YogaCustomer-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YogaCustomer-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ACD72BC73E3845343E6FAC2 /* libPods-FRY-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRY-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11455A5463493DE27112B735 /* libPods-FRY-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRY-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D458A6ABBE41B299E55FF7 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* F.R.Y..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = F.R.Y..app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = YogaCustomer/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = YogaCustomer/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = YogaCustomer/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = YogaCustomer/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = YogaCustomer/main.m; sourceTree = "<group>"; };
-		16063B16ADF6F56113779DD6 /* Pods-YogaCustomer-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaCustomer-tvOS.release.xcconfig"; path = "Target Support Files/Pods-YogaCustomer-tvOS/Pods-YogaCustomer-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		179D0F4886A19FC11870DC03 /* Pods-YogaCustomer-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaCustomer-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-YogaCustomer-tvOSTests/Pods-YogaCustomer-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "FRY/AppDelegate.h"; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = FRY/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "FRY/Images.xcassets"; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "FRY/Info.plist"; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "FRY/main.m"; sourceTree = "<group>"; };
+		16063B16ADF6F56113779DD6 /* Pods-FRY-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-tvOS.release.xcconfig"; path = "Target Support Files/Pods-FRY-tvOS/Pods-FRY-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		179D0F4886A19FC11870DC03 /* Pods-FRY-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-FRY-tvOSTests/Pods-FRY-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		2149D049A76E4E6FBE4B9E6D /* Raleway-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Light.ttf"; path = "../assets/fonts/Raleway-Light.ttf"; sourceTree = "<group>"; };
-		24667734EA8165B11B7B3717 /* libPods-YogaCustomer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YogaCustomer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E47B1E0B4A5D006451C7 /* YogaCustomer-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YogaCustomer-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* YogaCustomer-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YogaCustomer-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24667734EA8165B11B7B3717 /* libPods-FRY.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRY.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* FRY-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FRY-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* FRY-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FRY-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BFB5AE7A441439DB44ED136 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		5048F6628C7A4667BCE4C012 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Bold.ttf"; path = "../assets/fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		5A1119D4E31D47C9B2569A24 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
@@ -79,22 +79,22 @@
 		60B37D0C25ED11CD009C4217 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		60B37D0D25ED11CD009C4217 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		60B37D0E25ED11CD009C4217 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		60CF83DB25E399CD0007A6A2 /* YogaCustomer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YogaCustomer-Bridging-Header.h"; sourceTree = "<group>"; };
+		60CF83DB25E399CD0007A6A2 /* FRY-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FRY-Bridging-Header.h"; sourceTree = "<group>"; };
 		60CF83DC25E399CD0007A6A2 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		60DFD03F25E3D0C00013D66D /* YogaCustomer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = YogaCustomer.entitlements; path = YogaCustomer/YogaCustomer.entitlements; sourceTree = "<group>"; };
+		60DFD03F25E3D0C00013D66D /* FRY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FRY.entitlements; path = FRY/FRY.entitlements; sourceTree = "<group>"; };
 		60EA98D3274CB22D002A659F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		60FB2E9D2679F66800E2840D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		611ECFEE67FD81E41916C82B /* Pods-YogaCustomer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaCustomer.debug.xcconfig"; path = "Target Support Files/Pods-YogaCustomer/Pods-YogaCustomer.debug.xcconfig"; sourceTree = "<group>"; };
+		611ECFEE67FD81E41916C82B /* Pods-FRY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY.debug.xcconfig"; path = "Target Support Files/Pods-FRY/Pods-FRY.debug.xcconfig"; sourceTree = "<group>"; };
 		70771EC71163440BB0D61A8F /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		73FFC8D4B17A451882776310 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		762725D261B34A50A0C7C79C /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = YogaCustomer/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "FRY/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		85054A343CCF43DAA23B3DE9 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		8FC51FAF81054B209B295052 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		95AA464026574132BC51F3A6 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		96F788C71E2AD2645BD2124E /* libPods-YogaCustomer-YogaCustomerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YogaCustomer-YogaCustomerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F788C71E2AD2645BD2124E /* libPods-FRY-FRYTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRY-FRYTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7FE84521EE2421E855EA808 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Regular.ttf"; path = "../assets/fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
-		C7D2A09E66AC694B6BAD9A4E /* Pods-YogaCustomer-YogaCustomerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaCustomer-YogaCustomerTests.debug.xcconfig"; path = "Target Support Files/Pods-YogaCustomer-YogaCustomerTests/Pods-YogaCustomer-YogaCustomerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C7D2A09E66AC694B6BAD9A4E /* Pods-FRY-FRYTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-FRYTests.debug.xcconfig"; path = "Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C977F1DB16784690AA9F5C5C /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		CB89E9C4483641EA8C7210F6 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		DE119736B8D94C33A34E9B85 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -103,12 +103,12 @@
 		E8D52BA8E83446E4BD3CE85D /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		ED3D44688087321BF4286FD5 /* Pods-YogaCustomer-YogaCustomerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaCustomer-YogaCustomerTests.release.xcconfig"; path = "Target Support Files/Pods-YogaCustomer-YogaCustomerTests/Pods-YogaCustomer-YogaCustomerTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED3D44688087321BF4286FD5 /* Pods-FRY-FRYTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-FRYTests.release.xcconfig"; path = "Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests.release.xcconfig"; sourceTree = "<group>"; };
 		EDA3029A9EAE4A7BB40C1228 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		EF391039DA8AD9D09F89C99D /* Pods-YogaCustomer-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaCustomer-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-YogaCustomer-tvOSTests/Pods-YogaCustomer-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F9B2895E8858488423945779 /* Pods-YogaCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaCustomer.release.xcconfig"; path = "Target Support Files/Pods-YogaCustomer/Pods-YogaCustomer.release.xcconfig"; sourceTree = "<group>"; };
+		EF391039DA8AD9D09F89C99D /* Pods-FRY-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FRY-tvOSTests/Pods-FRY-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9B2895E8858488423945779 /* Pods-FRY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY.release.xcconfig"; path = "Target Support Files/Pods-FRY/Pods-FRY.release.xcconfig"; sourceTree = "<group>"; };
 		FD13CDCA7188424C8F63BFEA /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		FD6309A4CD96A05C6A3EC5E0 /* Pods-YogaCustomer-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaCustomer-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-YogaCustomer-tvOS/Pods-YogaCustomer-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FD6309A4CD96A05C6A3EC5E0 /* Pods-FRY-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-FRY-tvOS/Pods-FRY-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE307B5939F5586EDD7721A7 /* libPods-YogaCustomer-YogaCustomerTests.a in Frameworks */,
+				AE307B5939F5586EDD7721A7 /* libPods-FRY-FRYTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00EEC7F62B418FD7F0560449 /* libPods-YogaCustomer.a in Frameworks */,
+				00EEC7F62B418FD7F0560449 /* libPods-FRY.a in Frameworks */,
 				60EA98D4274CB22D002A659F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB2FBB9D6EE311CC75DAC6AB /* libPods-YogaCustomer-tvOS.a in Frameworks */,
+				FB2FBB9D6EE311CC75DAC6AB /* libPods-FRY-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,20 +141,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				347D05463A7B74B1BFDB8CCE /* libPods-YogaCustomer-tvOSTests.a in Frameworks */,
+				347D05463A7B74B1BFDB8CCE /* libPods-FRY-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* YogaCustomerTests */ = {
+		00E356EF1AD99517003FC87E /* FRYTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* YogaCustomerTests.m */,
+				00E356F21AD99517003FC87E /* FRYTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = YogaCustomerTests;
+			path = "FRYTests";
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -165,10 +165,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* YogaCustomer */ = {
+		13B07FAE1A68108700A75B9A /* FRY */ = {
 			isa = PBXGroup;
 			children = (
-				60DFD03F25E3D0C00013D66D /* YogaCustomer.entitlements */,
+				60DFD03F25E3D0C00013D66D /* FRY.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				60FB2E9D2679F66800E2840D /* GoogleService-Info.plist */,
 				60B37D0D25ED11CD009C4217 /* OpenSans-Bold.ttf */,
@@ -184,9 +184,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				60CF83DB25E399CD0007A6A2 /* YogaCustomer-Bridging-Header.h */,
+				60CF83DB25E399CD0007A6A2 /* FRY-Bridging-Header.h */,
 			);
-			name = YogaCustomer;
+			name = "FRY";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -195,10 +195,10 @@
 				60EA98D3274CB22D002A659F /* StoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				24667734EA8165B11B7B3717 /* libPods-YogaCustomer.a */,
-				96F788C71E2AD2645BD2124E /* libPods-YogaCustomer-YogaCustomerTests.a */,
-				11455A5463493DE27112B735 /* libPods-YogaCustomer-tvOS.a */,
-				0ACD72BC73E3845343E6FAC2 /* libPods-YogaCustomer-tvOSTests.a */,
+				24667734EA8165B11B7B3717 /* libPods-FRY.a */,
+				96F788C71E2AD2645BD2124E /* libPods-FRY-FRYTests.a */,
+				11455A5463493DE27112B735 /* libPods-FRY-tvOS.a */,
+				0ACD72BC73E3845343E6FAC2 /* libPods-FRY-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -213,9 +213,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* YogaCustomer */,
+				13B07FAE1A68108700A75B9A /* FRY */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* YogaCustomerTests */,
+				00E356EF1AD99517003FC87E /* FRYTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D38072B3610C11D1AAE651F9 /* Pods */,
@@ -230,9 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* F.R.Y..app */,
-				00E356EE1AD99517003FC87E /* YogaCustomerTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* YogaCustomer-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* YogaCustomer-tvOSTests.xctest */,
+				00E356EE1AD99517003FC87E /* FRYTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* FRY-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* FRY-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,14 +240,14 @@
 		D38072B3610C11D1AAE651F9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				611ECFEE67FD81E41916C82B /* Pods-YogaCustomer.debug.xcconfig */,
-				F9B2895E8858488423945779 /* Pods-YogaCustomer.release.xcconfig */,
-				C7D2A09E66AC694B6BAD9A4E /* Pods-YogaCustomer-YogaCustomerTests.debug.xcconfig */,
-				ED3D44688087321BF4286FD5 /* Pods-YogaCustomer-YogaCustomerTests.release.xcconfig */,
-				FD6309A4CD96A05C6A3EC5E0 /* Pods-YogaCustomer-tvOS.debug.xcconfig */,
-				16063B16ADF6F56113779DD6 /* Pods-YogaCustomer-tvOS.release.xcconfig */,
-				EF391039DA8AD9D09F89C99D /* Pods-YogaCustomer-tvOSTests.debug.xcconfig */,
-				179D0F4886A19FC11870DC03 /* Pods-YogaCustomer-tvOSTests.release.xcconfig */,
+				611ECFEE67FD81E41916C82B /* Pods-FRY.debug.xcconfig */,
+				F9B2895E8858488423945779 /* Pods-FRY.release.xcconfig */,
+				C7D2A09E66AC694B6BAD9A4E /* Pods-FRY-FRYTests.debug.xcconfig */,
+				ED3D44688087321BF4286FD5 /* Pods-FRY-FRYTests.release.xcconfig */,
+				FD6309A4CD96A05C6A3EC5E0 /* Pods-FRY-tvOS.debug.xcconfig */,
+				16063B16ADF6F56113779DD6 /* Pods-FRY-tvOS.release.xcconfig */,
+				EF391039DA8AD9D09F89C99D /* Pods-FRY-tvOSTests.debug.xcconfig */,
+				179D0F4886A19FC11870DC03 /* Pods-FRY-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -284,9 +284,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* YogaCustomerTests */ = {
+		00E356ED1AD99517003FC87E /* FRYTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "YogaCustomerTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FRYTests" */;
 			buildPhases = (
 				3BE686CF29951D32D206A3EE /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -299,14 +299,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = YogaCustomerTests;
-			productName = YogaCustomerTests;
-			productReference = 00E356EE1AD99517003FC87E /* YogaCustomerTests.xctest */;
+			name = FRYTests;
+			productName = FRYTests;
+			productReference = 00E356EE1AD99517003FC87E /* FRYTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* YogaCustomer */ = {
+		13B07F861A680F5B00A75B9A /* FRY */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "YogaCustomer" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FRY" */;
 			buildPhases = (
 				22DB7CC2FDF8E9CC76E55ABB /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -320,14 +320,14 @@
 			);
 			dependencies = (
 			);
-			name = YogaCustomer;
-			productName = YogaCustomer;
+			name = "FRY";
+			productName = "FRY";
 			productReference = 13B07F961A680F5B00A75B9A /* F.R.Y..app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* YogaCustomer-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* FRY-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "YogaCustomer-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FRY-tvOS" */;
 			buildPhases = (
 				9E92A362646F3EA469083372 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -340,14 +340,14 @@
 			);
 			dependencies = (
 			);
-			name = "YogaCustomer-tvOS";
-			productName = "YogaCustomer-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* YogaCustomer-tvOS.app */;
+			name = "FRY-tvOS";
+			productName = "FRY-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* FRY-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* YogaCustomer-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* FRY-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "YogaCustomer-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FRY-tvOSTests" */;
 			buildPhases = (
 				74A57E8D9FF7BCD2539C57C4 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -359,9 +359,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "YogaCustomer-tvOSTests";
-			productName = "YogaCustomer-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* YogaCustomer-tvOSTests.xctest */;
+			name = "FRY-tvOSTests";
+			productName = "FRY-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* FRY-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -392,7 +392,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "YogaCustomer" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "FRY" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -405,10 +405,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* YogaCustomer */,
-				00E356ED1AD99517003FC87E /* YogaCustomerTests */,
-				2D02E47A1E0B4A5D006451C7 /* YogaCustomer-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* YogaCustomer-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* FRY */,
+				00E356ED1AD99517003FC87E /* FRYTests */,
+				2D02E47A1E0B4A5D006451C7 /* FRY-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* FRY-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -484,7 +484,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YogaCustomer-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FRY-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -511,7 +511,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YogaCustomer/Pods-YogaCustomer-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FRY/Pods-FRY-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
@@ -556,7 +556,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YogaCustomer/Pods-YogaCustomer-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FRY/Pods-FRY-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3BE686CF29951D32D206A3EE /* [CP] Check Pods Manifest.lock */ = {
@@ -574,7 +574,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YogaCustomer-YogaCustomerTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FRY-FRYTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -596,7 +596,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YogaCustomer-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FRY-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -618,7 +618,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YogaCustomer-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FRY-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -631,7 +631,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YogaCustomer-YogaCustomerTests/Pods-YogaCustomer-YogaCustomerTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
@@ -676,7 +676,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YogaCustomer-YogaCustomerTests/Pods-YogaCustomer-YogaCustomerTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -724,7 +724,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* YogaCustomerTests.m in Sources */,
+				00E356F31AD99517003FC87E /* FRYTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,7 +751,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* YogaCustomerTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* FRYTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,12 +760,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* YogaCustomer */;
+			target = 13B07F861A680F5B00A75B9A /* FRY */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* YogaCustomer-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* FRY-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -773,7 +773,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7D2A09E66AC694B6BAD9A4E /* Pods-YogaCustomer-YogaCustomerTests.debug.xcconfig */;
+			baseConfigurationReference = C7D2A09E66AC694B6BAD9A4E /* Pods-FRY-FRYTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -781,7 +781,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = YogaCustomerTests/Info.plist;
+				INFOPLIST_FILE = "FRYTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -789,20 +789,20 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yogacustomer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YogaCustomer.app/YogaCustomer";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FRY.app/FRY";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED3D44688087321BF4286FD5 /* Pods-YogaCustomer-YogaCustomerTests.release.xcconfig */;
+			baseConfigurationReference = ED3D44688087321BF4286FD5 /* Pods-FRY-FRYTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = YogaCustomerTests/Info.plist;
+				INFOPLIST_FILE = "FRYTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -810,25 +810,26 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yogacustomer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YogaCustomer.app/YogaCustomer";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FRY.app/FRY";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 611ECFEE67FD81E41916C82B /* Pods-YogaCustomer.debug.xcconfig */;
+			baseConfigurationReference = 611ECFEE67FD81E41916C82B /* Pods-FRY.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = YogaCustomer/YogaCustomer.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FRY/FRY.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: F.R.Y. Inc (K6RAJ7URB9)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = K6RAJ7URB9;
 				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = YogaCustomer/Info.plist;
+				INFOPLIST_FILE = "FRY/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "F.R.Y";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.1;
@@ -838,10 +839,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.FRY.apps;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yogacustomer";
 				PRODUCT_NAME = F.R.Y.;
 				PROVISIONING_PROFILE_SPECIFIER = FRY_Live;
-				SWIFT_OBJC_BRIDGING_HEADER = "YogaCustomer-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FRY-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -850,18 +851,19 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9B2895E8858488423945779 /* Pods-YogaCustomer.release.xcconfig */;
+			baseConfigurationReference = F9B2895E8858488423945779 /* Pods-FRY.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = YogaCustomer/YogaCustomer.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FRY/FRY.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: F.R.Y. Inc (K6RAJ7URB9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: F.R.Y. Inc (K6RAJ7URB9)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = K6RAJ7URB9;
 				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = YogaCustomer/Info.plist;
+				INFOPLIST_FILE = "FRY/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "F.R.Y";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.1;
@@ -871,10 +873,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.FRY.apps;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yogacustomer";
 				PRODUCT_NAME = F.R.Y.;
 				PROVISIONING_PROFILE_SPECIFIER = FRY_Live;
-				SWIFT_OBJC_BRIDGING_HEADER = "YogaCustomer-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FRY-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -882,7 +884,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD6309A4CD96A05C6A3EC5E0 /* Pods-YogaCustomer-tvOS.debug.xcconfig */;
+			baseConfigurationReference = FD6309A4CD96A05C6A3EC5E0 /* Pods-FRY-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -893,14 +895,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "YogaCustomer-tvOS/Info.plist";
+				INFOPLIST_FILE = "FRY-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.YogaCustomer-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yogacustomer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -910,7 +912,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16063B16ADF6F56113779DD6 /* Pods-YogaCustomer-tvOS.release.xcconfig */;
+			baseConfigurationReference = 16063B16ADF6F56113779DD6 /* Pods-FRY-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -921,14 +923,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "YogaCustomer-tvOS/Info.plist";
+				INFOPLIST_FILE = "FRY-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.YogaCustomer-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yogacustomer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -938,7 +940,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF391039DA8AD9D09F89C99D /* Pods-YogaCustomer-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = EF391039DA8AD9D09F89C99D /* Pods-FRY-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -948,24 +950,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "YogaCustomer-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "FRY-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.YogaCustomer-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yogacustomer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YogaCustomer-tvOS.app/YogaCustomer-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FRY-tvOS.app/FRY-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 179D0F4886A19FC11870DC03 /* Pods-YogaCustomer-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 179D0F4886A19FC11870DC03 /* Pods-FRY-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -975,17 +977,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "YogaCustomer-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "FRY-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.YogaCustomer-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yogacustomer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YogaCustomer-tvOS.app/YogaCustomer-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FRY-tvOS.app/FRY-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1108,7 +1110,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "YogaCustomerTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FRYTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1117,7 +1119,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "YogaCustomer" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FRY" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1126,7 +1128,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "YogaCustomer-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FRY-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1135,7 +1137,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "YogaCustomer-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FRY-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1144,7 +1146,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "YogaCustomer" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "FRY" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

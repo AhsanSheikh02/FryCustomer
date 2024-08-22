@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'YogaCustomer' do
+target 'FRY' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
@@ -12,7 +12,7 @@ target 'YogaCustomer' do
 
 
 
-  target 'YogaCustomerTests' do
+  target 'FRYTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -27,10 +27,10 @@ target 'YogaCustomer' do
 #  end
 end
 
-target 'YogaCustomer-tvOS' do
-  # Pods for YogaCustomer-tvOS
+target 'FRY-tvOS' do
+  # Pods for FRY-tvOS
 
-  target 'YogaCustomer-tvOSTests' do
+  target 'FRY-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
