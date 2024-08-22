@@ -1,0 +1,166 @@
+diff --git a/node_modules/react-native-tiny-toast/lib/ToastContainer.js b/node_modules/react-native-tiny-toast/lib/ToastContainer.js
+index e95eb98..0b18c6f 100644
+--- a/node_modules/react-native-tiny-toast/lib/ToastContainer.js
++++ b/node_modules/react-native-tiny-toast/lib/ToastContainer.js
+@@ -1,17 +1,16 @@
+-import React, {Component} from 'react'
+-import PropTypes from 'prop-types'
++import React, { Component } from 'react'
+ import {
+-  ViewPropTypes,
+-  StyleSheet,
+-  View,
+-  Text,
++  ActivityIndicator,
+   Animated,
+-  Image,
+   Easing,
+-  ActivityIndicator,
+-  TouchableWithoutFeedback, Platform
++  Image,
++  Platform,
++  StyleSheet,
++  Text,
++  TouchableWithoutFeedback,
++  View
+ } from 'react-native'
+-import {getStatusBarHeight, getBottomSpace} from 'react-native-iphone-x-helper'
++import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper'
+ 
+ const position = {
+   TOP: 40 + (Platform.OS === 'ios' ? getStatusBarHeight() : 0),
+@@ -25,31 +24,6 @@ const duration = {
+ }
+ 
+ class ToastContainer extends Component {
+-  static propTypes = {
+-    ...ViewPropTypes,
+-    containerStyle: ViewPropTypes.style,
+-    duration: PropTypes.number,
+-    delay: PropTypes.number,
+-    animationDuration: PropTypes.number,
+-    visible: PropTypes.bool,
+-    position: PropTypes.number,
+-    animation: PropTypes.bool,
+-    shadow: PropTypes.bool,
+-    shadowColor: PropTypes.string,
+-    showText: PropTypes.bool,
+-    textColor: PropTypes.string,
+-    textStyle: Text.propTypes.style,
+-    mask: PropTypes.bool,
+-    maskColor: PropTypes.string,
+-    maskStyle: ViewPropTypes.style,
+-    imgSource: PropTypes.any,
+-    imgStyle: Image.propTypes.style,
+-    loading: PropTypes.bool,
+-    indicatorSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+-    onHidden: PropTypes.func,
+-    onMaskPress: PropTypes.func
+-  }
+-
+   static defaultProps = {
+     visible: false,
+     duration: duration.SHORT,
+@@ -104,13 +78,13 @@ class ToastContainer extends Component {
+     if (!this.animating) {
+       clearTimeout(this.hideTimeout)
+       this.animating = true
+-      const {animation, animationDuration, duration} = this.props
++      const { animation, animationDuration, duration } = this.props
+       Animated.timing(this.state.opacity, {
+         toValue: 1,
+         duration: animation ? animationDuration : 0,
+         easing: Easing.out(Easing.ease),
+         useNativeDriver: true
+-      }).start(({finished}) => {
++      }).start(({ finished }) => {
+         if (finished) {
+           this.animating = !finished
+           if (duration > 0) {
+@@ -125,13 +99,13 @@ class ToastContainer extends Component {
+     clearTimeout(this.showTimeout)
+     clearTimeout(this.hideTimeout)
+     if (!this.animating) {
+-      const {animation, animationDuration, onHidden} = this.props
++      const { animation, animationDuration, onHidden } = this.props
+       Animated.timing(this.state.opacity, {
+         toValue: 0,
+         duration: animation ? animationDuration : 0,
+         easing: Easing.in(Easing.ease),
+         useNativeDriver: true
+-      }).start(({finished}) => {
++      }).start(({ finished }) => {
+         if (finished) {
+           this.animating = false
+           onHidden && onHidden(this.props.siblingManager)
+@@ -141,14 +115,14 @@ class ToastContainer extends Component {
+   }
+ 
+   renderMaskToast = (children) => {
+-    const {maskColor, maskStyle, onMaskPress} = this.props
++    const { maskColor, maskStyle, onMaskPress } = this.props
+     return (
+-      <TouchableWithoutFeedback onPress={() => {onMaskPress && onMaskPress()}}>
++      <TouchableWithoutFeedback onPress={() => { onMaskPress && onMaskPress() }}>
+         <View
+           style={[
+             styles.maskStyle,
+             maskStyle,
+-            {backgroundColor: maskColor ? maskColor : ''}]}>
++            { backgroundColor: maskColor ? maskColor : '' }]}>
+           {children}
+         </View>
+       </TouchableWithoutFeedback>
+@@ -156,9 +130,9 @@ class ToastContainer extends Component {
+   }
+ 
+   render() {
+-    const {props} = this
++    const { props } = this
+     const offset = props.position
+-    const position = offset !== 0 ? offset > 0 ? {top: offset} : {bottom: -offset} : {height: '100%'}
++    const position = offset !== 0 ? offset > 0 ? { top: offset } : { bottom: -offset } : { height: '100%' }
+     const renderToast = (this.state.visible || this.animating) ?
+       <View
+         style={[
+@@ -174,7 +148,7 @@ class ToastContainer extends Component {
+               opacity: this.state.opacity
+             },
+             props.shadow && styles.shadowStyle,
+-            props.shadowColor && {shadowColor: props.shadowColor}
++            props.shadowColor && { shadowColor: props.shadowColor }
+           ]}
+           pointerEvents='none'>
+           {
+@@ -182,20 +156,20 @@ class ToastContainer extends Component {
+             <Image
+               resizeMode='contain'
+               style={props.imgStyle}
+-              source={props.imgSource}/>
++              source={props.imgSource} />
+           }
+           {
+             props.loading &&
+             <ActivityIndicator
+               color='#fff'
+-              size={props.indicatorSize}/>
++              size={props.indicatorSize} />
+           }
+           {
+             props.showText &&
+             <Text style={[
+               styles.textStyle,
+               props.textStyle,
+-              props.textColor && {color: props.textColor}
++              props.textColor && { color: props.textColor }
+             ]}>
+               {this.props.children}
+             </Text>
+@@ -252,6 +226,5 @@ const styles = StyleSheet.create({
+ 
+ export default ToastContainer
+ export {
+-  position,
+-  duration
++  duration, position
+ }

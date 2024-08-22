@@ -1,26 +1,25 @@
-import * as React from 'react';
-import { useEffect } from 'react';
-import { Text, View, Image, TouchableOpacity, Alert, Platform } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from './Home'
-import CategoryList from './CategoryList';
-import VideoList from './VideoList';
-import Event from '../events/Event'
-import Product from '../products/Product'
-import Notification from '../notifications/Notification'
-import Setting from '../settings/Setting'
-import { createStackNavigator } from '@react-navigation/stack';
-import { colors, GET_SUBSCRIPTION_LIST, IAP_PAYMENT } from '../../utils/constants';
-import { CommonActions } from '@react-navigation/native';
-import { useAuth } from '../../redux/providers/auth';
 import { GoogleSignin } from '@react-native-community/google-signin';
-import { AccessToken, GraphRequest, GraphRequestManager, LoginManager } from 'react-native-fbsdk';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { CommonActions } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { Alert, Image, Platform, TouchableOpacity } from 'react-native';
+import { LoginManager } from 'react-native-fbsdk';
 import * as RNIap from 'react-native-iap';
-import { useState } from 'react';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Toast from 'react-native-tiny-toast';
+import { useAuth } from '../../redux/providers/auth';
 import fetch from '../../services/fetch';
+import { colors, GET_SUBSCRIPTION_LIST, IAP_PAYMENT } from '../../utils/constants';
 import EditProfile from '../auth/EditProfile';
+import Event from '../events/Event';
+import Notification from '../notifications/Notification';
+import Product from '../products/Product';
+import Setting from '../settings/Setting';
+import CategoryList from './CategoryList';
+import Home from './Home';
+import VideoList from './VideoList';
 
 const HomeStack = createStackNavigator();
 const EventStack = createStackNavigator();
@@ -35,7 +34,7 @@ function HomeStackScreen(props) {
 
     function showLogoutDialog() {
         Alert.alert(
-            "Log Out",
+            'Log Out',
             'Are you sure you want to log out?',
             [
                 {
@@ -46,19 +45,19 @@ function HomeStackScreen(props) {
                 {
                     text: 'YES',
                     onPress: () => {
-                        logout()
+                        logout();
                     },
                 },
             ],
             { cancelable: false },
-        )
+        );
     }
 
     async function logout() {
-        await handleLogout()
-        configurationGoogleSignin()
-        await signOutFromGoogle()
-        signOutFromFacebook()
+        await handleLogout();
+        configurationGoogleSignin();
+        await signOutFromGoogle();
+        signOutFromFacebook();
         navigation.dispatch(
             CommonActions.reset({
                 index: 1,
@@ -87,47 +86,23 @@ function HomeStackScreen(props) {
             if (GoogleSignin.isSignedIn()) {
                 // await GoogleSignin.revokeAccess();
                 await GoogleSignin.signOut();
-                //   this.setState({ user: null }); // Remember to remove the user from your app's state as well   
+                //   this.setState({ user: null }); // Remember to remove the user from your app's state as well
             }
         } catch (error) {
             console.error(error);
         }
-    };
+    }
 
     function signOutFromFacebook() {
-        LoginManager.logOut()
-        return
-        var current_access_token = '';
-        AccessToken.getCurrentAccessToken().then((data) => {
-            console.log(data)
-            current_access_token = data.accessToken.toString();
-        }).then(() => {
-            let logout =
-                new GraphRequest(
-                    "me/permissions/",
-                    {
-                        accessToken: current_access_token,
-                        httpMethod: 'DELETE'
-                    },
-                    (error, result) => {
-                        if (error) {
-                            console.log('Error fetching data: ' + error.toString());
-                        } else {
-                            LoginManager.logOut();
-                        }
-                    });
-            new GraphRequestManager().addRequest(logout).start();
-        })
-            .catch(error => {
-                console.log(error)
-            });
+        LoginManager.logOut();
+        return;
     }
 
     return (
         <HomeStack.Navigator>
             <HomeStack.Screen name="Home" component={Home}
                 options={({ navigation, route }) => ({
-                    headerTitle: "Home",
+                    headerTitle: 'Home',
                     headerTitleAlign: 'center',
                     headerTintColor: colors.main_color,
                     headerBackTitleVisible: false,
@@ -158,7 +133,7 @@ function HomeStackScreen(props) {
                     headerBackTitleVisible: false,
                     headerTintColor: colors.main_color,
                     headerStyle: { backgroundColor: colors.secondary_color, elevation: 0, shadowOpacity: 0 },
-                    headerBackImage: () => <Image style={[{ height: verticalScale(30), width: scale(30), resizeMode: 'contain', tintColor: colors.main_color }, Platform.OS == "ios" ? { marginLeft: moderateScale(20) } : {}]} source={require("../../../assets/images/left.png")} />
+                    headerBackImage: () => <Image style={[{ height: verticalScale(30), width: scale(30), resizeMode: 'contain', tintColor: colors.main_color }, Platform.OS == 'ios' ? { marginLeft: moderateScale(20) } : {}]} source={require('../../../assets/images/left.png')} />,
                 })} />
             <HomeStack.Screen name="VideoList" component={VideoList}
                 options={({ route }) => ({
@@ -166,12 +141,12 @@ function HomeStackScreen(props) {
                     headerTitleAlign: 'center', headerTitleStyle: {
                         alignSelf: 'center',
                         justifyContent: 'center',
-                        marginLeft: moderateScale(25)
+                        marginLeft: moderateScale(25),
                     },
                     headerBackTitleVisible: false,
                     headerTintColor: colors.main_color,
                     headerStyle: { backgroundColor: colors.secondary_color, elevation: 0, shadowOpacity: 0 },
-                    headerBackImage: () => <Image style={[{ height: verticalScale(30), width: scale(30), resizeMode: 'contain', tintColor: colors.main_color }, Platform.OS == "ios" ? { marginLeft: moderateScale(20) } : {}]} source={require("../../../assets/images/left.png")} />
+                    headerBackImage: () => <Image style={[{ height: verticalScale(30), width: scale(30), resizeMode: 'contain', tintColor: colors.main_color }, Platform.OS == 'ios' ? { marginLeft: moderateScale(20) } : {}]} source={require('../../../assets/images/left.png')} />,
                 })} />
         </HomeStack.Navigator>
     );
@@ -183,7 +158,7 @@ function EventStackScreen() {
         <EventStack.Navigator>
             <EventStack.Screen name="Events" component={Event}
                 options={{
-                    headerTitle: "Event",
+                    headerTitle: 'Event',
                     headerTitleAlign: 'center',
                     headerTintColor: colors.main_color,
                     headerStyle: { backgroundColor: colors.secondary_color, elevation: 0, shadowOpacity: 0 },
@@ -198,12 +173,12 @@ function StoreStackScreen() {
         <StoreStack.Navigator>
             <StoreStack.Screen name="Store" component={Product}
                 options={({ navigation, route }) => ({
-                    headerTitle: "Shop",
+                    headerTitle: 'Shop',
                     headerTitleAlign: 'center',
                     headerTintColor: colors.main_color,
                     headerStyle: { backgroundColor: colors.secondary_color, elevation: 0, shadowOpacity: 0 },
                     headerRight: () =>
-                        <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate("Addtocart")}>
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('Addtocart')}>
                             <Image
                                 source={require('../../../assets/images/cart.png')}
                                 style={{
@@ -211,11 +186,11 @@ function StoreStackScreen() {
                                     height: 24,
                                     // borderRadius: 40 / 2,
                                     marginRight: 15,
-                                    tintColor: colors.main_color
+                                    tintColor: colors.main_color,
                                 }}
 
                             />
-                        </TouchableOpacity>
+                        </TouchableOpacity>,
                 })}
             />
         </StoreStack.Navigator>
@@ -228,7 +203,7 @@ function NotificationStackScreen() {
         <NotificationStack.Navigator>
             <EventStack.Screen name="Notifications" component={Notification}
                 options={{
-                    headerTitle: "Notification",
+                    headerTitle: 'Notification',
                     headerTitleAlign: 'center',
                     headerTintColor: colors.main_color,
                     headerStyle: { backgroundColor: colors.secondary_color, elevation: 0, shadowOpacity: 0 },
@@ -243,7 +218,7 @@ function SettingStackScreen() {
         <SettingStack.Navigator>
             <SettingStack.Screen name="Settings" component={Setting}
                 options={{
-                    headerTitle: "Settings",
+                    headerTitle: 'Settings',
                     headerTitleAlign: 'center',
                     headerTintColor: colors.main_color,
                     headerStyle: { backgroundColor: colors.secondary_color, elevation: 0, shadowOpacity: 0 },
@@ -260,38 +235,38 @@ const Tab = createBottomTabNavigator();
 export default function TabView() {
 
     const { state, handleUserProfile } = useAuth();
-    const [planList, setPlanList] = useState([])
+    const [planList, setPlanList] = useState([]);
     const itemSubs = ['com.yogacustomer.1month', 'com.yogacustomer.3month', 'com.yogacustomer.1year'];
 
     useEffect(() => {
-        const user = state.user
-        console.log("user", user)
-        if (user && user.subscriptions != "" && user.subscribe == 0 && planList.length > 0) {
-            getAvailablePurchases()
+        const user = state.user;
+        console.log('user', user);
+        if (user && user.subscriptions != '' && user.subscribe == 0 && planList.length > 0) {
+            getAvailablePurchases();
         }
-    }, [planList, state])
+    }, [planList, state]);
 
     useEffect(() => {
         RNIap.initConnection()
             .then(result => {
-                console.log("IAP result: ", result)
-                getItems()
+                console.log('IAP result: ', result);
+                getItems();
 
-                Toast.hide()
+                Toast.hide();
                 fetch.get(GET_SUBSCRIPTION_LIST)
                     .then((result) => {
-                        console.log("result", result)
-                        Toast.hide()
+                        console.log('result', result);
+                        Toast.hide();
                         if (result.status == 1) {
-                            setPlanList(result.data)
+                            setPlanList(result.data);
                         } else {
-                            setPlanList([])
+                            setPlanList([]);
                         }
                     })
                     .catch((error) => {
-                        console.log("error", error)
-                        Toast.hide()
-                    })
+                        console.log('error', error);
+                        Toast.hide();
+                    });
 
                 if (Platform.OS === 'android') {
                     RNIap.flushFailedPurchasesCachedAsPendingAndroid()
@@ -299,141 +274,146 @@ export default function TabView() {
                             console.log('consumed all items?', result);
                         })
                         .catch(error => {
-                            console.log("error", error)
-                        })
+                            console.log('error', error);
+                        });
                 } else {
                     RNIap.clearTransactionIOS();
                 }
             })
             .catch((reason) => {
-                console.log("error", reason)
-            })
+                console.log('error', reason);
+            });
 
         return (() => {
             RNIap.endConnection();
-        })
-    }, [RNIap])
+        });
+    }, [RNIap]);
 
     const getAvailablePurchases = async () => {
         try {
             const purchases = await RNIap.getAvailablePurchases();
-            console.log("available purchases", purchases)
+            console.log('available purchases', purchases);
             if (purchases.length > 0) {
                 let receipt;
                 if (Platform.OS === 'android') {
-                    receipt = JSON.parse(purchases[0].transactionReceipt)
+                    receipt = JSON.parse(purchases[0].transactionReceipt);
                 }
                 else {
-                    receipt = { "productId": purchases[0].productId, "purchaseTime": purchases[0].transactionDate }
+                    receipt = { 'productId': purchases[0].productId, 'purchaseTime': purchases[0].transactionDate };
                 }
-                console.info("receipt", receipt);
+                console.info('receipt', receipt);
 
                 const data = planList.find((value) => {
-                    return value.sku === receipt.productId
-                })
+                    return value.sku === receipt.productId;
+                });
                 if (data) {
-                    const plan = data
+                    const plan = data;
                     // call api free-subscription, params: plan.id, receipt.purchaseTime
-                    buyIAPsubscription(plan, receipt.purchaseTime)
+                    buyIAPsubscription(plan, receipt.purchaseTime);
                 }
             }
         } catch (err) {
             console.warn(err); // standardized err.code and err.message available
             // Alert.alert(err.message);
         }
-    }
+    };
 
     function buyIAPsubscription(plan, purchaseTime) {
         fetch.post(IAP_PAYMENT, {
             expiry_at: purchaseTime,
-            subscription_id: plan.id
+            subscription_id: plan.id,
         })
             .then((result) => {
-                console.log("result", result)
-                Toast.show(result.msg)
-                Toast.hide()
+                console.log('result', result);
+                Toast.show(result.msg);
+                Toast.hide();
                 if (result.status == 1) {
                     // Toast.showSuccess(response.message)
                     handleUserProfile()
                         .then((response) => {
-                            Toast.hide()
-                            console.log("IAPsubscription-res: ", response)
-                            let title = "Restore Successful"
-                            let message = 'You have successfully restored ' + plan.title
+                            Toast.hide();
+                            console.log('IAPsubscription-res: ', response);
+                            let title = 'Restore Successful';
+                            let message = 'You have successfully restored ' + plan.title;
                             Alert.alert(
                                 title,
                                 message
-                            )
+                            );
 
                         })
                         .catch((error) => {
-                            Toast.hide()
+                            Toast.hide();
                             console.log(error.message);
-                        })
+                        });
                 } else {
-                    Toast.show(response.message)
+                    Toast.show(response.message);
                 }
             })
             .catch((error) => {
-                console.log("error", error)
-                Toast.show("something went wrong!")
+                console.log('error', error);
+                Toast.show('something went wrong!');
             })
             .finally(() => {
-                Toast.hide()
-            })
+                Toast.hide();
+            });
     }
 
     const getItems = async () => {
         try {
-            console.log("itemSubs ", itemSubs);
+            console.log('itemSubs ', itemSubs);
             const Products = await RNIap.getSubscriptions(itemSubs);
             console.log('IAP Su', Products);
         } catch (err) {
-            console.warn("IAP error", err.code, err.message, err);
+            console.warn('IAP error', err.code, err.message, err);
         }
     };
 
 
     return (
         <Tab.Navigator
-            screenOptions={({ route }) => (
-                {
-                    headerTitle: "Home",
-                    tabBarIcon: ({ focused }) => {
-                        // console.log("route", route)
-
-                        let icon;
-                        if (route.name === 'Home') {
-                            icon = require('../../../assets/images/home1.png')
-                        } else if (route.name === 'Events') {
-                            icon = require('../../../assets/images/event1.png')
-                        } else if (route.name == "Shop") {
-                            icon = require('../../../assets/images/shop1.png')
-                        } else if (route.name == "Notifications") {
-                            icon = require('../../../assets/images/notification1.png')
-                        } else {
-                            icon = require('../../../assets/images/settings1.png')
-                        }
-
-                        return <Image resizeMode="contain" style={{ height: verticalScale(25), width: scale(25), tintColor: focused ? colors.main_color : 'white' }}
-                            source={icon} />
-                    },
-
-
-                })}
-            tabBarOptions={{
-                activeTintColor: colors.main_color,
-                inactiveTintColor: 'white',
-                keyboardHidesTabBar: true,
-                labelStyle: Platform.OS == "android" ? { textTransform: "uppercase", marginBottom: moderateScale(8) } : { textTransform: "uppercase" },
-                style: Platform.OS == "android" ? { backgroundColor: colors.secondary_color, padding: moderateScale(6), height: verticalScale(60) } : { backgroundColor: colors.secondary_color }
+            screenOptions={{
+                headerShown: false,
+                tabBarActiveTintColor: colors.main_color,
+                tabBarInactiveTintColor: 'white',
+                tabBarHideOnKeyboard: true,
+                tabBarLabelStyle: Platform.OS === 'android' ? { textTransform: 'uppercase', marginBottom: moderateScale(8) } : { textTransform: 'uppercase' },
+                tabBarStyle: { backgroundColor: colors.secondary_color, height: verticalScale(60), justifyContent: 'space-evenly' },
+                tabBarIconStyle: {
+                    height: moderateScale(25),
+                    width: moderateScale(25),
+                },
             }}
         >
-            <Tab.Screen name="Home" component={HomeStackScreen} />
-            <Tab.Screen name="Events" component={EventStackScreen} />
-            {/* <Tab.Screen name="Shop" component={StoreStackScreen} /> */}
-            <Tab.Screen name="Notifications" component={NotificationStackScreen} />
-            <Tab.Screen name="Settings" component={SettingStackScreen} />
+            <Tab.Screen name="Home" component={HomeStackScreen} options={{
+                tabBarIcon: ({ color, focused, size }) => {
+                    return <Image resizeMode="contain" style={{ height: size, width: size, tintColor: color }}
+                        source={require('../../../assets/images/home1.png')} />;
+                },
+            }} />
+            <Tab.Screen name="Events" component={EventStackScreen} options={{
+                tabBarIcon: ({ color, focused, size }) => {
+                    return <Image resizeMode="contain" style={{ height: size, width: size, tintColor: color }}
+                        source={require('../../../assets/images/event1.png')} />;
+                },
+            }} />
+            {/* <Tab.Screen name="Shop" component={StoreStackScreen} options={{
+                tabBarIcon: ({ color, focused, size }) => {
+                    return <Image resizeMode="contain" style={{ height: size, width: size, tintColor: color }}
+                        source={require('../../../assets/images/shop1.png')} />;
+                },
+            }} /> */}
+            <Tab.Screen name="Notifications" component={NotificationStackScreen} options={{
+                tabBarIcon: ({ color, focused, size }) => {
+                    return <Image resizeMode="contain" style={{ height: size, width: size, tintColor: color }}
+                        source={require('../../../assets/images/notification1.png')} />;
+                },
+            }} />
+            <Tab.Screen name="Settings" component={SettingStackScreen} options={{
+                tabBarIcon: ({ color, focused, size }) => {
+                    return <Image resizeMode="contain" style={{ height: size, width: size, tintColor: color }}
+                        source={require('../../../assets/images/settings1.png')} />;
+                },
+            }} />
         </Tab.Navigator>
     );
 }

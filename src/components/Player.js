@@ -1,22 +1,13 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Image, ImageBackground, Platform, StyleSheet, Text, TouchableOpacity, View, ViewPropTypes } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import Video from 'react-native-video'; // eslint-disable-line
-import { colors } from '../utils/constants';
 import moment from 'moment';
-import { CustomText } from './Text';
+import React, { Component } from 'react';
+import { Image, ImageBackground, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Video from 'react-native-video';
+import { colors } from '../utils/constants';
+import { CustomText } from './Text';
 
 const BackgroundImage = ImageBackground || Image; // fall back to Image if RN < 0.46
-
-let ViewPropTypesVar;
-
-if (ViewPropTypes) {
-  ViewPropTypesVar = ViewPropTypes;
-} else {
-  ViewPropTypesVar = View.propTypes;
-}
 
 const styles = StyleSheet.create({
   preloadingPlaceholder: {
@@ -113,7 +104,7 @@ export default class VideoPlayer extends Component {
       duration: 0,
       currentTime: 0,
       isSeeking: false,
-      isFullScreen: false
+      isFullScreen: false,
     };
 
     this.seekBarWidth = 200;
@@ -181,13 +172,13 @@ export default class VideoPlayer extends Component {
     }
     this.setState({
       progress: event.currentTime / (this.props.duration || this.state.duration),
-      currentTime: event.currentTime
+      currentTime: event.currentTime,
     });
   }
 
   onBuffer(event) {
     if (this.props.onBuffer) {
-      this.props.onBuffer(event)
+      this.props.onBuffer(event);
     }
   }
 
@@ -249,14 +240,14 @@ export default class VideoPlayer extends Component {
     if (Platform.OS === 'android') {
       if (this.state.isFullScreen) {
         this.setState({ isFullScreen: false }, () => {
-          Orientation.lockToPortrait()
-          this.props.onFullScreenChange(1)
-        })
+          Orientation.lockToPortrait();
+          this.props.onFullScreenChange(1);
+        });
       } else {
         this.setState({ isFullScreen: true }, () => {
-          Orientation.lockToLandscape()
-          this.props.onFullScreenChange(0)
-        })
+          Orientation.lockToLandscape();
+          this.props.onFullScreenChange(0);
+        });
       }
     } else {
       this.player.presentFullscreenPlayer();
@@ -460,10 +451,10 @@ export default class VideoPlayer extends Component {
   }
 
   renderTime() {
-    let formattedTime = moment.utc(this.state.currentTime * (1000)).format("mm:ss")
+    let formattedTime = moment.utc(this.state.currentTime * (1000)).format('mm:ss');
     return (
-      <CustomText style={{ color: "white", paddingStart: 10 }}>{formattedTime}</CustomText>
-    )
+      <CustomText style={{ color: 'white', paddingStart: 10 }}>{formattedTime}</CustomText>
+    );
   }
 
   renderControls() {
@@ -496,7 +487,7 @@ export default class VideoPlayer extends Component {
           <TouchableOpacity activeOpacity={0.8} onPress={this.onToggleFullScreen} style={customStyles.controlButton}>
             <Icon
               style={[styles.extraControl, customStyles.controlIcon]}
-              name={!this.state.isFullScreen ? "fullscreen" : "fullscreen-exit"}
+              name={!this.state.isFullScreen ? 'fullscreen' : 'fullscreen-exit'}
               size={32}
             />
           </TouchableOpacity>
@@ -549,12 +540,10 @@ export default class VideoPlayer extends Component {
             style={styles.overlayButton}
             onPress={() => {
               this.showControls();
-              if (pauseOnPress)
-                this.onPlayPress();
+              if (pauseOnPress) { this.onPlayPress(); }
             }}
             onLongPress={() => {
-              if (fullScreenOnLongPress && Platform.OS !== 'android')
-                this.onToggleFullScreen();
+              if (fullScreenOnLongPress && Platform.OS !== 'android') { this.onToggleFullScreen(); }
             }}
           />
         </View>
@@ -591,58 +580,6 @@ export default class VideoPlayer extends Component {
     );
   }
 }
-
-VideoPlayer.propTypes = {
-  video: Video.propTypes.source,
-  thumbnail: Image.propTypes.source,
-  endThumbnail: Image.propTypes.source,
-  videoWidth: PropTypes.number,
-  videoHeight: PropTypes.number,
-  duration: PropTypes.number,
-  autoplay: PropTypes.bool,
-  paused: PropTypes.bool,
-  defaultMuted: PropTypes.bool,
-  muted: PropTypes.bool,
-  style: ViewPropTypesVar.style,
-  controlsTimeout: PropTypes.number,
-  disableControlsAutoHide: PropTypes.bool,
-  disableFullscreen: PropTypes.bool,
-  loop: PropTypes.bool,
-  resizeMode: Video.propTypes.resizeMode,
-  hideControlsOnStart: PropTypes.bool,
-  endWithThumbnail: PropTypes.bool,
-  disableSeek: PropTypes.bool,
-  pauseOnPress: PropTypes.bool,
-  fullScreenOnLongPress: PropTypes.bool,
-  customStyles: PropTypes.shape({
-    wrapper: ViewPropTypesVar.style,
-    video: Video.propTypes.style,
-    videoWrapper: ViewPropTypesVar.style,
-    controls: ViewPropTypesVar.style,
-    playControl: ViewPropTypesVar.style,
-    controlButton: ViewPropTypesVar.style,
-    controlIcon: Icon.propTypes.style,
-    playIcon: Icon.propTypes.style,
-    seekBar: ViewPropTypesVar.style,
-    seekBarFullWidth: ViewPropTypesVar.style,
-    seekBarProgress: ViewPropTypesVar.style,
-    seekBarKnob: ViewPropTypesVar.style,
-    seekBarKnobSeeking: ViewPropTypesVar.style,
-    seekBarBackground: ViewPropTypesVar.style,
-    thumbnail: Image.propTypes.style,
-    playButton: ViewPropTypesVar.style,
-    playArrow: Icon.propTypes.style,
-  }),
-  onEnd: PropTypes.func,
-  onProgress: PropTypes.func,
-  onBuffer: PropTypes.func,
-  onLoad: PropTypes.func,
-  onStart: PropTypes.func,
-  onPlayPress: PropTypes.func,
-  onHideControls: PropTypes.func,
-  onShowControls: PropTypes.func,
-  onMutePress: PropTypes.func,
-};
 
 VideoPlayer.defaultProps = {
   videoWidth: 1280,

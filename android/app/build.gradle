@@ -75,7 +75,6 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 
 android {
     ndkVersion rootProject.ext.ndkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
     namespace "com.yogacustomer"
@@ -85,7 +84,6 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 35
         versionName "3.5"
-        multiDexEnabled true
     	missingDimensionStrategy 'store', 'play'
     }
     signingConfigs {
