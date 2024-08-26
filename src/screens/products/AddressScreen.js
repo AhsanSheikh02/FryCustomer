@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { TouchableOpacity, Text, View, Button, ActivityIndicator, Alert, StyleSheet, ScrollView, Dimensions, Image, KeyboardAvoidingView, Platform } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import { CustomTextInput } from '../../components/TextInput';
-import { CustomButton } from '../../components/Button';
-import Toast from 'react-native-tiny-toast';
-import { colors } from '../../utils/constants';
+import React, { useEffect, useRef, useState } from 'react';
+import { Dimensions, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import Toast from 'react-native-tiny-toast';
+import { CustomButton } from '../../components/Button';
 import { CustomText } from '../../components/Text';
+import { CustomTextInput } from '../../components/TextInput';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors } from '../../utils/constants';
 export default function AddressScreen(props) {
     const { navigation } = props;
 

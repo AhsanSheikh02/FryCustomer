@@ -1,17 +1,15 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { LogBox, TouchableOpacity, StyleSheet, Text, View, Button, ActivityIndicator, Alert, KeyboardAvoidingView, Dimensions, ScrollView, Image, Platform } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import { CustomButton } from '../../components/Button';
-import ViewPager from '@react-native-community/viewpager';
-import ImageDialog from '../../components/ImageDialog';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { colors } from '../../utils/constants';
-import { CustomText } from '../../components/Text';
-import Toast from 'react-native-tiny-toast';
 import moment from "moment";
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, Dimensions, Image, LogBox, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
-import Player from '../../components/Player'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import Toast from 'react-native-tiny-toast';
+import { CustomButton } from '../../components/Button';
+import ImageDialog from '../../components/ImageDialog';
+import Player from '../../components/Player';
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors } from '../../utils/constants';
 
 export default function EventDetailsScreen(props) {
 

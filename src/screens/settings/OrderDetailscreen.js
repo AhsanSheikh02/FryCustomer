@@ -1,12 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { TouchableOpacity, Text, View, Button, ActivityIndicator, Alert, ScrollView, StyleSheet, Dimensions, FlatList, Image } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import OrderDetailsCell from './OrderDetailsCell';
-import { config, colors } from '../../utils/constants';
-import { CustomText } from '../../components/Text';
+import moment from "moment";
+import React, { useEffect, useState } from 'react';
+import { Dimensions, FlatList, Image, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Toast from 'react-native-tiny-toast';
-import moment from "moment";
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors, config } from '../../utils/constants';
+import OrderDetailsCell from './OrderDetailsCell';
 
 export default function OrderDetailscreen(props) {
     const { navigate } = props;

@@ -1,17 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { ScrollView, TextInput, Text, Linking, View, Image, Button, SafeAreaView, TouchableOpacity, StyleSheet, Dimensions, FlatList, KeyboardAvoidingView, LogBox, Platform, ActivityIndicator, StatusBar } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import DropDownPicker from 'react-native-dropdown-picker';
-import HomeCell from './HomeCell'
-import { CustomText } from '../../components/Text';
-import ViewPager from '@react-native-community/viewpager';
-import { colors, config, fonts } from '../../utils/constants';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import CategoryCell from './CategoryCell'
-import Player from '../../components/Player'
+import React, { useEffect, useRef, useState } from 'react';
+import { ActivityIndicator, Dimensions, Image, LogBox, Platform, ScrollView, StatusBar, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Toast from 'react-native-tiny-toast';
-import { useRef } from 'react';
+import Player from '../../components/Player';
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors } from '../../utils/constants';
 
 let heightScaled = Dimensions.get("window").height / 2
 
@@ -102,7 +97,7 @@ export default function VideoDetailsScreen(props) {
                                 const { width, height } = event.naturalSize;
                                 heightScaled = (height * (Dimensions.get("window").width / width)) + verticalScale(20);
                                 console.log("height: ", heightScaled)
-                    
+
                                 event.naturalSize.orientation = "horizontal";
                                 setVideoHeight(heightScaled)
                             }}
@@ -119,7 +114,7 @@ export default function VideoDetailsScreen(props) {
                             }}
                         />}
                     </View>
-                    
+
                     {loading && is_data_found ?
                         <View style={{ width: "100%", height: Dimensions.get("window").height / verticalScale(2), position: "absolute", justifyContent: "center", alignItems: "center" }}>
                             <ActivityIndicator size={'large'} color={"white"} style={{ alignSelf: "center" }} />

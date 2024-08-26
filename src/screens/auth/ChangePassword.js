@@ -1,27 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
-    Platform,
-    StyleSheet,
-    View,
-    Alert,
     Dimensions,
     Image,
-    Text,
-    TouchableOpacity,
-    KeyboardAvoidingView,
-    ScrollView,
     ImageBackground,
-    Keyboard
+    Keyboard,
+    KeyboardAvoidingView,
+    Platform,
+    ScrollView,
+    StyleSheet,
+    TouchableOpacity,
+    View
 } from 'react-native';
 
-import { useAuth } from '../../redux/providers/auth';
-import { CustomTextInput } from '../../components/TextInput';
-import { CustomButton } from '../../components/Button';
-import Toast from 'react-native-tiny-toast';
-import { colors, config } from '../../utils/constants';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import Toast from 'react-native-tiny-toast';
+import { CustomButton } from '../../components/Button';
 import { CustomText } from '../../components/Text';
-import { CommonActions } from '@react-navigation/native';
+import { CustomTextInput } from '../../components/TextInput';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors } from '../../utils/constants';
 
 
 export default function ChangePassword(props) {

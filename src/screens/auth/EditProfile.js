@@ -22,7 +22,7 @@ import WebView from 'react-native-webview';
 import { CustomButton } from '../../components/Button';
 import { CustomText } from '../../components/Text';
 import { CustomTextInput } from '../../components/TextInput';
-import { useAuth } from '../../redux/providers/auth';
+import { useAuth } from '../../redux/providers/AuthProvider';
 import { colors, fonts } from '../../utils/constants';
 
 export default function EditProfile(props) {

@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
     StyleSheet,
-    StatusBar,
-    Image,
     View
 } from 'react-native';
-import { Header } from "../../components/Header";
-import { ErrorText } from "../../components/Error";
-import { useAuth } from '../../redux/providers/auth';
 import SplashScreen from 'react-native-splash-screen';
-import Global from '../../utils/global';
-import fetch from '../../services/fetch';
-import { SCHOOL_LIST } from '../../utils/constants';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useAuth } from '../../redux/providers/AuthProvider';
 export default function Splash(props) {
     // console.log("props", props)
     const { navigation } = props;
@@ -39,7 +31,7 @@ export default function Splash(props) {
         }, 1000);
     }, [navigation])
 
-   
+
     async function load() {
 
         getAuthState()

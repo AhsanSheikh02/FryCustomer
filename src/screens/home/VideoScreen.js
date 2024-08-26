@@ -1,10 +1,9 @@
-import React, { useState, useContext, useEffect, useRef } from 'react';
-import { BackHandler, Dimensions, StyleSheet, Text, View, Button, ActivityIndicator, Alert, Image, TouchableOpacity, LogBox } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useEffect, useRef, useState } from 'react';
+import { BackHandler, Dimensions, Image, LogBox, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { NodePlayerView } from 'react-native-nodemediaclient';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { useAuth } from '../../redux/providers/AuthProvider';
 import { colors } from '../../utils/constants';
-import { NodeCameraView, NodePlayerView } from 'react-native-nodemediaclient';
 export default function VideoScreen(props) {
     const { navigation, route } = props;
 
@@ -105,7 +104,7 @@ const styles = StyleSheet.create({
         width: moderateScale(50),
         alignSelf: 'flex-start',
         margin: moderateScale(10),
-        marginTop:moderateScale(20)
+        marginTop: moderateScale(20)
     },
 });
 

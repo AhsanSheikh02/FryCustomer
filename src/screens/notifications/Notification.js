@@ -1,9 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { TouchableOpacity, Text, Image, View, Button, ActivityIndicator, Alert, ScrollView, Dimensions, StyleSheet, FlatList, SectionList } from 'react-native';
-import { CustomText } from '../../components/Text';
-import { useAuth } from '../../redux/providers/auth';
+import React, { useEffect, useState } from 'react';
+import { Dimensions, Image, SectionList, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-// import NotifService from './NotifService'
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+// import Notification from './Notification'
 import Toast from 'react-native-tiny-toast';
 import { colors } from '../../utils/constants';
 
@@ -11,81 +11,71 @@ export default function Notification(props) {
     const { navigation } = props;
 
     //1 - DECLARE VARIABLES
-    const [is_data_found, setDataFound] = useState(false)
+    const [is_data_found, setDataFound] = useState(false);
 
     const [notificationList, setNotificationList] = useState(
         [
-            // {
-            //     title: 'Order Notification',
-            //     data: ['Order received', 'Order processed', 'Order completed', 'Monthly subscription payment slip', 'Notification 5',
-            //         'Notification 6', 'Notification 7',]
-            // },
-
-            // {
-            //     title: 'Event Notification',
-            //     data: ['Live Event Started', 'Notification 2', 'Notification 3', 'Notification 4', 'Notification 5',
-            //         'Notification 6', 'Notification 7',]
-            // },
 
         ]
-    )
-    const { state, handleLogout, handleGetNotification } = useAuth();
-    const user = state.user;
+    );
+    const { handleGetNotification } = useAuth();
 
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', e => {
             // Prevent default behavior
-            callAPIforGetNotification()
+            callAPIforGetNotification();
             // Do something manually
             // ...
         });
         return unsubscribe;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     function callAPIforGetNotification() {
-        Toast.showLoading("Please wait..")
+        Toast.showLoading('Please wait..');
         handleGetNotification()
             .then((response) => {
-                Toast.hide()
-                console.log("GetNotification-res: ", response)
+                console.log('GetNotification-res: ', response);
                 if (response.status == 1) {
-                    // Toast.showSuccess(response.message)
-                    setNotificationList(response.data)
+                    setNotificationList(response.data);
                     if (response.data[0].data.length == 0 && response.data[1].data.length == 0) {
-                        setDataFound(true)
+                        setDataFound(true);
                     }
                 }
             })
             .catch((error) => {
-                setDataFound(true)
-                Toast.hide()
+                setDataFound(true);
+                Toast.hide();
                 console.log(error.message);
-                Toast.show(error.message)
+                Toast.show(error.message);
             })
+            .finally(() => {
+                Toast.hide();
+            });
 
     }
     function render({ item, index }) {
-        return <TouchableOpacity activeOpacity={0.8} onPress={() => item.order_id ? navigation.navigate("OrderDetails", { orderData: item })
-            : navigation.navigate("EventDetails", { item })} >
+        return <TouchableOpacity activeOpacity={0.8} onPress={() => item.order_id ? navigation.navigate('OrderDetails', { orderData: item })
+            : navigation.navigate('EventDetails', { item })} >
             <View style={{
                 width: Dimensions.get('window').width - scale(10), justifyContent: 'center',
-                flexDirection: 'row', alignItems: "center", margin: moderateScale(5)
+                flexDirection: 'row', alignItems: 'center', margin: moderateScale(5),
             }}>
-                <View width={"20%"}>
-                    <Image style={styles.ImageContainer} source={{ uri: item.order_image ? item.order_image : item.event_image }}></Image>
+                <View width={'20%'}>
+                    <Image style={styles.ImageContainer} source={{ uri: item.order_image ? item.order_image : item.event_image }} />
                 </View>
-                <View width={"80%"}>
-                    <CustomText style={{ color: colors.secondary_color, fontSize: moderateScale(14), }}>{item.message}</CustomText>
+                <View width={'80%'}>
+                    <CustomText style={{ color: colors.secondary_color, fontSize: moderateScale(14) }}>{item.message}</CustomText>
                 </View>
             </View>
-        </TouchableOpacity >
+        </TouchableOpacity >;
 
     }
 
     function renderSectionHeader({ section }) {
-        return section.data.length > 0 ? <View style={[styles.LineStyle, { height: verticalScale(35), opacity: 0.8, justifyContent: 'center', }]}>
+        return section.data.length > 0 ? <View style={[styles.LineStyle, { height: verticalScale(35), opacity: 0.8, justifyContent: 'center' }]}>
             <CustomText bold style={{ fontSize: moderateScale(16), marginLeft: moderateScale(10), color: colors.secondary_color }}>{section.title}</CustomText>
-        </View> : console.log("")
+        </View> : console.log('');
     }
 
 
@@ -134,14 +124,13 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width,
         marginTop: 0,
         marginLeft: 0,
-        marginLeft: 0,
         backgroundColor: 'transparent',
     },
     LineStyle: {
         height: 1,
         // marginTop: 10,
         backgroundColor: colors.main_color,
-        width: Dimensions.get('window').width
+        width: Dimensions.get('window').width,
     },
     ImageContainer: {
         width: moderateScale(60),
@@ -150,7 +139,7 @@ const styles = StyleSheet.create({
         // tintColor: colors.secondary_color
     },
     textContainer: {
-        fontSize: moderateScale(20)
+        fontSize: moderateScale(20),
     },
     NoReordContainer: {
         position: 'absolute',
@@ -159,7 +148,7 @@ const styles = StyleSheet.create({
         marginTop: '70%',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
     },
 });
 

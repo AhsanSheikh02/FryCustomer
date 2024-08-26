@@ -17,7 +17,7 @@ import Toast from 'react-native-tiny-toast';
 import { CustomButton } from '../../components/Button';
 import { CustomText } from '../../components/Text';
 import { CustomTextInput } from '../../components/TextInput';
-import { useAuth } from '../../redux/providers/auth';
+import { useAuth } from '../../redux/providers/AuthProvider';
 import { colors, config, fonts } from '../../utils/constants';
 
 export default function Register(props) {

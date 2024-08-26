@@ -1,16 +1,18 @@
-import React, { useState, useContext, useEffect } from 'react';
-import {
-    Text, View, Button, ActivityIndicator, Alert, StyleSheet, TouchableOpacity,
-    Dimensions, ScrollView, KeyboardAvoidingView, Image, Linking, Platform
-} from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
 import { CommonActions, useIsFocused } from '@react-navigation/native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { colors, config } from '../../utils/constants';
-import { CustomText } from '../../components/Text';
-import Toast from 'react-native-tiny-toast';
 import moment from "moment";
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import React, { useEffect, useState } from 'react';
+import {
+    Alert,
+    Dimensions,
+    Image, Linking, Platform,
+    StyleSheet, TouchableOpacity,
+    View
+} from 'react-native';
+import { moderateScale } from 'react-native-size-matters';
+import Toast from 'react-native-tiny-toast';
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors, config } from '../../utils/constants';
 export default function Setting(props) {
     const { navigation } = props;
 

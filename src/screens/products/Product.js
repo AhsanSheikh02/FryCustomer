@@ -1,10 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { ScrollView, Text, View, Button, StyleSheet, Dimensions, FlatList, KeyboardAvoidingView } from 'react-native';
-import { CustomText } from '../../components/Text';
-import { useAuth } from '../../redux/providers/auth';
-import ProductCell from './ProductCell'
+import React, { useEffect, useState } from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
 import Toast from 'react-native-tiny-toast';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import ProductCell from './ProductCell';
 export default function Product(props) {
     const { navigation } = props;
 

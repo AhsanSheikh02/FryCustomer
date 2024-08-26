@@ -1,16 +1,14 @@
-import React, { useState, useContext } from 'react';
-import { TouchableOpacity, TextInput, Text, View, Button, ActivityIndicator, Alert, KeyboardAvoidingView, StyleSheet, Dimensions, Image, Platform, ImageBackground, FlatList } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import { CustomButton } from '../../components/Button';
 import { CommonActions } from '@react-navigation/native';
-import constants, { colors, config, GET_SUBSCRIPTION_LIST, IAP_PAYMENT } from '../../utils/constants';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import Icon from 'react-native-vector-icons/Fontisto';
-import fetch from '../../services/fetch';
-import { CustomText } from '../../components/Text';
-import Toast from 'react-native-tiny-toast';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, Alert, Dimensions, FlatList, Image, ImageBackground, KeyboardAvoidingView, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
 import * as RNIap from 'react-native-iap';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import Toast from 'react-native-tiny-toast';
+import { CustomButton } from '../../components/Button';
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import fetch from '../../services/fetch';
+import constants, { colors, config, GET_SUBSCRIPTION_LIST, IAP_PAYMENT } from '../../utils/constants';
 
 var plans = [
     // {

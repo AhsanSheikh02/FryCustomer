@@ -1,14 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { TouchableOpacity, Image, Text, View, Button, ActivityIndicator, ImageBackground, Alert, StyleSheet, ScrollView, KeyboardAvoidingView, Dimensions } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import { CustomButton } from '../../components/Button';
 import ViewPager from '@react-native-community/viewpager';
-import ImageDialog from '../../components/ImageDialog';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { colors, config } from '../../utils/constants';
-import { CustomText } from '../../components/Text';
+import React, { useEffect, useState } from 'react';
+import { Dimensions, Image, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Toast from 'react-native-tiny-toast';
+import ImageDialog from '../../components/ImageDialog';
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors, config } from '../../utils/constants';
 
 export default function ProductDetails(props) {
     const { navigation } = props;

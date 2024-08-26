@@ -1,13 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { TouchableOpacity, Image, StyleSheet, ScrollView, Dimensions, Text, View, Button, ActivityIndicator, Alert, FlatList, Modal } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import { CustomButton } from '../../components/Button';
-import CartCell from './CartCell';
-import { config } from '../../utils/constants';
-import { CustomText } from '../../components/Text';
-import { colors } from '../../utils/constants';
+import React, { useEffect, useState } from 'react';
+import { Dimensions, FlatList, Image, Modal, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Toast from 'react-native-tiny-toast';
+import { CustomButton } from '../../components/Button';
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors, config } from '../../utils/constants';
+import CartCell from './CartCell';
 
 
 const TYPE_INCREASE = 1

@@ -1,13 +1,13 @@
-import React, { useState, useContext } from 'react';
-import { TextInput, Text, View, Button, ActivityIndicator, Alert, KeyboardAvoidingView, StyleSheet, Dimensions, Image, TouchableOpacity, Platform, ImageBackground } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import { CustomButton } from '../../components/Button';
-import OTPInputView from '@twotalltotems/react-native-otp-input'
-import { colors } from '../../utils/constants';
+import { CommonActions } from '@react-navigation/native';
+import OTPInputView from '@twotalltotems/react-native-otp-input';
+import React, { useState } from 'react';
+import { Dimensions, Image, ImageBackground, KeyboardAvoidingView, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Toast from 'react-native-tiny-toast';
-import { CommonActions } from '@react-navigation/native';
+import { CustomButton } from '../../components/Button';
 import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors } from '../../utils/constants';
 
 export default function OTPVerification(props) {
     const { navigation, route } = props;

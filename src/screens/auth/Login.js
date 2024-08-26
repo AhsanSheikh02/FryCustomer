@@ -21,11 +21,10 @@ import Toast from 'react-native-tiny-toast';
 import { CustomButton } from '../../components/Button';
 import { CustomText } from '../../components/Text';
 import { CustomTextInput } from '../../components/TextInput';
-import { useAuth } from '../../redux/providers/auth';
-import { ADD_SCHOOL, colors, config, social_type } from '../../utils/constants';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors, config, social_type } from '../../utils/constants';
 
 import PushNotification from 'react-native-push-notification';
-import fetch from '../../services/fetch';
 
 var socialInitialCheck = true;
 
@@ -48,10 +47,8 @@ export default function Login(props) {
     const [deviceType, setDeviceType] = useState('');
 
     const [showPassword, setShowPassword] = useState(false);
-    const [schoolList, setSchoolList] = useState([{ label: '', id: 0, selected: false }]);
-    const [school, setSchool] = useState('');
-    // const [showSchoolDialog, setShowSchoolDialog] = useState(false);
-    const { handleLogin, handleSocialLogin, handleSendOTP } = useAuth();
+
+    const { handleLogin, handleSocialLogin } = useAuth();
     var passwordRef = useRef(null);
 
     useEffect(() => {
@@ -346,50 +343,6 @@ export default function Login(props) {
         else {
             alert('something went wrong');
         }
-    }
-
-    function schoolSelectionDone() {
-        setShowSchoolDialog(false);
-        let schoolId = school;
-        if (schoolId == 0) {
-            schoolId = '';
-        }
-        console.log('schoolId', schoolId);
-        // Toast.showLoading("Please wait...")
-        fetch.post(ADD_SCHOOL, { school: schoolId })
-            .then((result) => {
-                console.log('result', result);
-                Toast.show(result.msg);
-            })
-            .catch((error) => {
-                console.log('error', error);
-                Toast.show('something went wrong!');
-            })
-            .finally(() => {
-                Toast.hide();
-                navigation.dispatch(
-                    CommonActions.reset({
-                        index: 1,
-                        routes: [
-                            { name: 'SubscriptionPage' },
-                        ],
-                    })
-                );
-            });
-
-    }
-
-    function setSchoolSelection(item, index) {
-        let schools = schoolList.map((element, index1) => {
-            element.selected = false;
-            if (index == index1) {
-                element.selected = true;
-                setSchool(element.value);
-            }
-            return element;
-        });
-
-        setSchoolList(schools);
     }
 
     return (

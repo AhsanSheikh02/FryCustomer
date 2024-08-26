@@ -1,7 +1,7 @@
-import React, { useState, useContext } from 'react';
-import { TouchableOpacity, Text, Image, View, Button, ActivityIndicator, Alert, ScrollView, Dimensions, StyleSheet, FlatList, SectionList } from 'react-native';
+import React from 'react';
+import { Dimensions, StyleSheet, View } from 'react-native';
 import { CustomText } from '../../components/Text';
-import { useAuth } from '../../redux/providers/auth';
+import { useAuth } from '../../redux/providers/AuthProvider';
 
 export default function AboutUsScreen(props) {
     const { navigate } = props.navigation;

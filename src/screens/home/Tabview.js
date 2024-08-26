@@ -9,7 +9,7 @@ import { LoginManager } from 'react-native-fbsdk';
 import * as RNIap from 'react-native-iap';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Toast from 'react-native-tiny-toast';
-import { useAuth } from '../../redux/providers/auth';
+import { useAuth } from '../../redux/providers/AuthProvider';
 import fetch from '../../services/fetch';
 import { colors, GET_SUBSCRIPTION_LIST, IAP_PAYMENT } from '../../utils/constants';
 import EditProfile from '../auth/EditProfile';
@@ -244,6 +244,7 @@ export default function TabView() {
         if (user && user.subscriptions != '' && user.subscribe == 0 && planList.length > 0) {
             getAvailablePurchases();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [planList, state]);
 
     useEffect(() => {
@@ -287,6 +288,7 @@ export default function TabView() {
         return (() => {
             RNIap.endConnection();
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [RNIap]);
 
     const getAvailablePurchases = async () => {
@@ -346,7 +348,7 @@ export default function TabView() {
                             console.log(error.message);
                         });
                 } else {
-                    Toast.show(response.message);
+                    Toast.show(result?.response.message);
                 }
             })
             .catch((error) => {

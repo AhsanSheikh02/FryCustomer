@@ -1,14 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { ScrollView, TextInput, Text, Linking, View, Image, Button, TouchableOpacity, StyleSheet, Dimensions, FlatList, KeyboardAvoidingView, Alert } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import DropDownPicker from 'react-native-dropdown-picker';
-import HomeCell from './HomeCell'
-import { CustomText } from '../../components/Text';
-import ViewPager from '@react-native-community/viewpager';
-import { colors, config, fonts } from '../../utils/constants';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import CategoryCell from './CategoryCell'
+import React, { useEffect, useState } from 'react';
+import { Alert, FlatList, StyleSheet, View } from 'react-native';
+import { moderateScale, verticalScale } from 'react-native-size-matters';
 import Toast from 'react-native-tiny-toast';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors, fonts } from '../../utils/constants';
+import HomeCell from './HomeCell';
 
 export default function VideoList(props) {
     let { videoLists, route } = props
@@ -50,7 +46,7 @@ export default function VideoList(props) {
             //     navigation.navigate('VideoScreen', { item })
             // } else {
             navigation.navigate('VideoDetailsScreen', { item })
-            // } 
+            // }
         } else {
             Alert.alert(
                 "Subscribe now",

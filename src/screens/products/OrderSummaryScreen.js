@@ -1,13 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Text, Image, View, Button, ActivityIndicator, Alert, ScrollView, Dimensions, StyleSheet, FlatList } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import { CustomButton } from '../../components/Button';
-import OrderCell from './OrderCell';
-import { config } from '../../utils/constants';
-import { CustomText } from '../../components/Text';
-import { colors } from '../../utils/constants';
+import React, { useEffect, useState } from 'react';
+import { Dimensions, FlatList, Image, StyleSheet, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Toast from 'react-native-tiny-toast';
+import { CustomButton } from '../../components/Button';
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors, config } from '../../utils/constants';
+import OrderCell from './OrderCell';
 export default function OrderSummaryScreen(props) {
     const { navigation } = props;
 

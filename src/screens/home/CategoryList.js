@@ -1,14 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { ScrollView, TextInput, Text, Linking, View, Image, Button, TouchableOpacity, StyleSheet, Dimensions, FlatList, KeyboardAvoidingView } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import DropDownPicker from 'react-native-dropdown-picker';
-import HomeCell from './HomeCell'
-import { CustomText } from '../../components/Text';
-import ViewPager from '@react-native-community/viewpager';
-import { colors, config, fonts } from '../../utils/constants';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import CategoryCell from './CategoryCell'
+import React, { useEffect, useState } from 'react';
+import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { moderateScale, verticalScale } from 'react-native-size-matters';
 import Toast from 'react-native-tiny-toast';
+import { CustomText } from '../../components/Text';
+import { useAuth } from '../../redux/providers/AuthProvider';
+import { colors, fonts } from '../../utils/constants';
+import CategoryCell from './CategoryCell';
 export default function CategoryList(props) {
     const { navigation, route } = props;
     // const { navigate } = navigation;

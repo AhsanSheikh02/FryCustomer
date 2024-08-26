@@ -1,12 +1,9 @@
-import React, { useState, useContext, useEffect, useRef } from 'react';
-import { LogBox, Dimensions, ScrollView, StyleSheet, Text, View, Button, ActivityIndicator, Alert, Image, TouchableOpacity, Platform } from 'react-native';
-import { useAuth } from '../../redux/providers/auth';
-import Player from '../../components/Player'
+import React, { useEffect, useRef, useState } from 'react';
+import { Dimensions, Image, LogBox, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { colors } from '../../utils/constants';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import WebView from 'react-native-webview';
+import { colors } from '../../utils/constants';
 
 export default function LiveVideoRecordScreen(props) {
     const { navigation, route } = props;
