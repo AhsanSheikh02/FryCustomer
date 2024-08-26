@@ -1,42 +1,33 @@
-import React, { useEffect, useRef, useState } from 'react';
-import {
-    Platform,
-    StyleSheet,
-    View,
-    Alert,
-    Dimensions,
-    Image,
-    Text,
-    TouchableOpacity,
-    KeyboardAvoidingView,
-    ScrollView,
-    ImageBackground,
-    Modal,
-    FlatList
-} from 'react-native';
+import { appleAuth } from '@invertase/react-native-apple-authentication';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
     GoogleSignin,
-    GoogleSigninButton,
     statusCodes,
 } from '@react-native-community/google-signin';
-import { AccessToken, LoginManager, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
-import { useAuth } from '../../redux/providers/auth';
-import { CustomTextInput } from '../../components/TextInput';
-import { CustomButton } from '../../components/Button';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import Toast from 'react-native-tiny-toast';
-import { ADD_SCHOOL, colors, config, fonts, social_type } from '../../utils/constants';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import { CommonActions } from '@react-navigation/native';
-import { appleAuth } from '@invertase/react-native-apple-authentication';
+import React, { useEffect, useRef, useState } from 'react';
+import {
+    Dimensions,
+    Image,
+    ImageBackground,
+    Platform,
+    StyleSheet,
+    TouchableOpacity,
+    View,
+} from 'react-native';
+import { AccessToken, GraphRequest, GraphRequestManager, LoginManager } from 'react-native-fbsdk';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import Toast from 'react-native-tiny-toast';
+import { CustomButton } from '../../components/Button';
 import { CustomText } from '../../components/Text';
+import { CustomTextInput } from '../../components/TextInput';
+import { useAuth } from '../../redux/providers/auth';
+import { ADD_SCHOOL, colors, config, social_type } from '../../utils/constants';
 
-import PushNotification from "react-native-push-notification";
-import PushNotificationIOS from '@react-native-community/push-notification-ios';
+import PushNotification from 'react-native-push-notification';
 import fetch from '../../services/fetch';
-import Global from '../../utils/global';
 
-var socialInitialCheck = true
+var socialInitialCheck = true;
 
 export default function Login(props) {
     // console.log("props", props)
@@ -44,64 +35,42 @@ export default function Login(props) {
     const { navigate } = navigation;
 
     if (socialInitialCheck) {
-        configurationGoogleSignin()
-        signOutFromGoogle()
-        signOutFromFacebook()
-        socialInitialCheck = false
+        configurationGoogleSignin();
+        signOutFromGoogle();
+        signOutFromFacebook();
+        socialInitialCheck = false;
     }
 
     //1 - DECLARE VARIABLES
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [deviceToken, setDeviceToken] = useState("");
-    const [deviceType, setDeviceType] = useState("");
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [deviceToken, setDeviceToken] = useState('');
+    const [deviceType, setDeviceType] = useState('');
 
     const [showPassword, setShowPassword] = useState(false);
-    const [schoolList, setSchoolList] = useState([{ label: "", id: 0, selected: false }]);
-    const [school, setSchool] = useState("");
+    const [schoolList, setSchoolList] = useState([{ label: '', id: 0, selected: false }]);
+    const [school, setSchool] = useState('');
     // const [showSchoolDialog, setShowSchoolDialog] = useState(false);
     const { handleLogin, handleSocialLogin, handleSendOTP } = useAuth();
-    var passwordRef = useRef(null)
+    var passwordRef = useRef(null);
 
     useEffect(() => {
-        Enablenotification()
-        // AsyncStorage.getItem('device_token')
-        //     .then(req => JSON.parse(req))
-        //     .then((data) => {
-        //         setDeviceToken(data.token)
-        //         setDeviceType(data.os)
-        //     })
-
-        // AsyncStorage.getItem('schools')
-        //     .then(req => JSON.parse(req))
-        //     .then((data) => {
-        //         console.log("schools: ", data)
-        //         let array = []
-        //         array.push({ label: "Individual First Responder", value: 0, selected: true })
-        //         if (data) {
-        //             array = []
-        //             data.forEach(element => {
-        //                 array.push({ label: element.school_name, value: element.id, selected: false })
-        //             });
-        //         }
-        //         console.log("parsed schools: ", array)
-        //         setSchoolList(array)
-        //     })
-    }, [])
+        Enablenotification();
+    }, []);
 
     function Enablenotification() {
         PushNotification.configure({
             // (optional) Called when Token is generated (iOS and Android)
             onRegister: function (token) {
                 // console.log("TOKEN:", token);
-                setDeviceToken(token.token)
-                setDeviceType(token.os)
-                AsyncStorage.setItem("device_token", JSON.stringify(token))
+                setDeviceToken(token.token);
+                setDeviceType(token.os);
+                AsyncStorage.setItem('device_token', JSON.stringify(token));
             },
 
             // (required) Called when a remote is received or opened, or local notification is opened
             onNotification: function (notification) {
-                console.log("onNotifaction:", notification);
+                console.log('onNotifaction:', notification);
                 // process the notification
 
                 // (required) Called when a remote is received or opened, or local notification is opened
@@ -110,15 +79,15 @@ export default function Login(props) {
 
             // (optional) Called when Registered Action is pressed and invokeApp is false, if true onNotification will be called (Android)
             onAction: function (notification) {
-                console.log("ACTION:", notification.action);
-                console.log("onAction:", notification);
+                console.log('ACTION:', notification.action);
+                console.log('onAction:', notification);
 
                 // process the action
             },
 
             // (optional) Called when the user fails to register for remote notifications. Typically occurs when APNS is having issues, or the device is a simulator. (iOS)
             onRegistrationError: function (err) {
-                console.error("onRegistrationError", err.message, err);
+                console.error('onRegistrationError', err.message, err);
             },
 
             // IOS ONLY (optional): default: all - Permissions to register.
@@ -162,52 +131,28 @@ export default function Login(props) {
             if (GoogleSignin.isSignedIn()) {
                 // await GoogleSignin.revokeAccess();
                 await GoogleSignin.signOut();
-                //   this.setState({ user: null }); // Remember to remove the user from your app's state as well   
+                //   this.setState({ user: null }); // Remember to remove the user from your app's state as well
             }
         } catch (error) {
             console.error(error);
         }
-    };
+    }
 
     function signOutFromFacebook() {
-        LoginManager.logOut()
-        return
-        var current_access_token = '';
-        AccessToken.getCurrentAccessToken().then((data) => {
-            console.log(data)
-            current_access_token = data.accessToken.toString();
-        }).then(() => {
-            let logout =
-                new GraphRequest(
-                    "me/permissions/",
-                    {
-                        accessToken: current_access_token,
-                        httpMethod: 'DELETE'
-                    },
-                    (error, result) => {
-                        if (error) {
-                            console.log('Error fetching data: ' + error.toString());
-                        } else {
-                            LoginManager.logOut();
-                        }
-                    });
-            new GraphRequestManager().addRequest(logout).start();
-        })
-            .catch(error => {
-                console.log(error)
-            });
+        LoginManager.logOut();
+        return;
     }
 
     function callApiforLogin() {
-        Toast.showLoading("Please wait..")
+        Toast.showLoading('Please wait..');
         // debugger
 
         handleLogin(email, password, deviceToken, deviceType)
             .then((response) => {
-                Toast.hide()
-                console.log("handleLogin-res: ", response)
+                Toast.hide();
+                console.log('handleLogin-res: ', response);
                 if (response.status == 1) {
-                    Toast.showSuccess(response.message)
+                    Toast.showSuccess(response.message);
                     // navigation.navigate('SubscriptionPage')
                     navigation.dispatch(
                         CommonActions.reset({
@@ -218,15 +163,15 @@ export default function Login(props) {
                         })
                     );
                 } else if (response.status == 2) {
-                    Toast.show(response.message)
-                    navigation.navigate('OTPVerification', { email, password })
+                    Toast.show(response.message);
+                    navigation.navigate('OTPVerification', { email, password });
                 }
             })
             .catch((error) => {
-                Toast.hide()
+                Toast.hide();
                 console.log(error.message);
-                Toast.show(error.message)
-            })
+                Toast.show(error.message);
+            });
     }
 
     function signIn() {
@@ -234,27 +179,27 @@ export default function Login(props) {
         // return
 
         if (email == '') {
-            Toast.show("Please Enter Email Address")
+            Toast.show('Please Enter Email Address');
         } else if (config.EMAIL_REG.test(email) === false) {
-            Toast.show('Please Enter Valid Email Address')
+            Toast.show('Please Enter Valid Email Address');
         } else if (password == '') {
-            Toast.show("Please Enter Password")
+            Toast.show('Please Enter Password');
         } else {
-            callApiforLogin()
+            callApiforLogin();
         }
     }
 
     function fbSignIn() {
 
-        LoginManager.logInWithPermissions(["email", "public_profile"]).then(
+        LoginManager.logInWithPermissions(['email', 'public_profile']).then(
             function (result) {
-                console.log("result", result)
+                console.log('result', result);
                 if (result.isCancelled) {
                     // Toast.show("Login cancelled")
                 } else {
                     AccessToken.getCurrentAccessToken()
                         .then((data) => {
-                            console.log(data)
+                            console.log(data);
                             // Create a graph request asking for user information with a callback to handle the response.
                             const infoRequest = new GraphRequest(
                                 '/me',
@@ -263,17 +208,17 @@ export default function Login(props) {
                                     version: 'v10.0',
                                     parameters: {
                                         'fields': {
-                                            'string': 'id,name,first_name,last_name,email,picture.type(large)'
-                                        }
-                                    }
+                                            'string': 'id,name,first_name,last_name,email,picture.type(large)',
+                                        },
+                                    },
                                 },
                                 (error, result) => {
                                     if (error) {
-                                        console.log("error:", error)
-                                        Toast.show("Something went wrong!")
+                                        console.log('error:', error);
+                                        Toast.show('Something went wrong!');
                                     }
                                     else {
-                                        console.log("result:", result)
+                                        console.log('result:', result);
                                         callApiforSocialLogin(social_type.FACEBOOK, result.id, result.email, result.first_name, result.last_name, result.picture.data.url);
 
                                     }
@@ -283,15 +228,15 @@ export default function Login(props) {
                             new GraphRequestManager().addRequest(infoRequest).start();
                         })
                         .catch((error) => {
-                            console.log("error: ", error)
-                            Toast.show("Something went wrong!")
-                        })
+                            console.log('error: ', error);
+                            Toast.show('Something went wrong!');
+                        });
 
                 }
             },
             function (error) {
-                console.log("Login fail with error: " + error);
-                Toast.show("Something went wrong!")
+                console.log('Login fail with error: ' + error);
+                Toast.show('Something went wrong!');
             }
         );
     }
@@ -300,36 +245,27 @@ export default function Login(props) {
         try {
             GoogleSignin.hasPlayServices()
                 .then((success) => {
-                    console.log("success", success)
+                    console.log('success', success);
                     GoogleSignin.signIn()
                         .then((result) => {
-                            const { user } = result
-                            console.log("userInfo: ", user)
-                            // social_id, social_type, first_name, last_name, email, profile_url, otp
-                            // navigate("SocialRegister", {
-                            //     social_type: social_type.GOOGLE,
-                            //     social_id: user.id,
-                            //     email: user.email,
-                            //     last_name: user.familyName,
-                            //     first_name: user.givenName,
-                            //     profile_url: user.photo
-                            // })
+                            const { user } = result;
+                            console.log('userInfo: ', user);
                             callApiforSocialLogin(social_type.GOOGLE, user.id, user.email, user.givenName, user.familyName, user.photo);
                         })
                         .catch((error) => {
-                            handleGoogleLoginError(error)
-                        })
+                            handleGoogleLoginError(error);
+                        });
                 })
                 .catch((error) => {
-                    handleGoogleLoginError(error)
-                })
+                    handleGoogleLoginError(error);
+                });
         } catch (error) {
-            handleGoogleLoginError(error)
+            handleGoogleLoginError(error);
         }
-    };
+    }
 
     function handleGoogleLoginError(error) {
-        console.log('google signin error', error)
+        console.log('google signin error', error);
         if (error.code === statusCodes.SIGN_IN_CANCELLED) {
             console.log('cancelled');
             // Toast.show("Login cancelled")
@@ -340,33 +276,33 @@ export default function Login(props) {
             console.log('play services not available or outdated');
             // Toast.show(error.message ? error.message : "Something went wrong!")
         } else {
-            Toast.show("Something went wrong!")
+            Toast.show('Something went wrong!');
         }
     }
 
     function callApiforSocialLogin(type, id, email, firstName, lastName, photo) {
-        Toast.showLoading("Please wait..")
+        Toast.showLoading('Please wait..');
         handleSocialLogin(id, type, firstName, lastName, email, photo, false, deviceToken, deviceType)
             .then((result) => {
-                Toast.hide()
-                console.log("result: ", result)
+                Toast.hide();
+                console.log('result: ', result);
                 if (result.status == 1) {
-                    Toast.showSuccess(result.message)
+                    Toast.showSuccess(result.message);
                     // if (schoolList.length > 1) {
                     //     Global.setToken(result.data.token)
                     //     setShowSchoolDialog(true)
                     // } else {
-                        navigation.dispatch(
-                            CommonActions.reset({
-                                index: 1,
-                                routes: [
-                                    { name: 'SubscriptionPage' },
-                                ],
-                            })
-                        );
+                    navigation.dispatch(
+                        CommonActions.reset({
+                            index: 1,
+                            routes: [
+                                { name: 'SubscriptionPage' },
+                            ],
+                        })
+                    );
                     // }
                 } else if (result.status == 2) {
-                    Toast.showSuccess(result.message)
+                    Toast.showSuccess(result.message);
                     navigation.dispatch(
                         CommonActions.reset({
                             index: 1,
@@ -376,14 +312,14 @@ export default function Login(props) {
                         })
                     );
                 } else {
-                    Toast.show(result.message)
+                    Toast.show(result.message);
                 }
             })
             .catch((error) => {
-                Toast.hide()
-                console.log("error: ", error)
-                Toast.show(error.message)
-            })
+                Toast.hide();
+                console.log('error: ', error);
+                Toast.show(error.message);
+            });
     }
 
     async function onAppleButtonPress() {
@@ -399,38 +335,38 @@ export default function Login(props) {
 
         // use credentialState response to ensure the user is authenticated
         if (credentialState === appleAuth.State.AUTHORIZED) {
-            console.log("Email", appleAuthRequestResponse.email)
-            console.log("firstname", appleAuthRequestResponse.fullName.givenName)
-            console.log("lastname", appleAuthRequestResponse.fullName.familyName)
-            console.log("id", appleAuthRequestResponse.user)
-            const user = appleAuthRequestResponse
-            let firstname = appleAuthRequestResponse.fullName.givenName == null ? " " : appleAuthRequestResponse.fullName.givenName
-            callApiforSocialLogin(social_type.APPLE, user.user, user.email, firstname, user.fullName.familyName, "");
+            console.log('Email', appleAuthRequestResponse.email);
+            console.log('firstname', appleAuthRequestResponse.fullName.givenName);
+            console.log('lastname', appleAuthRequestResponse.fullName.familyName);
+            console.log('id', appleAuthRequestResponse.user);
+            const user = appleAuthRequestResponse;
+            let firstname = appleAuthRequestResponse.fullName.givenName == null ? ' ' : appleAuthRequestResponse.fullName.givenName;
+            callApiforSocialLogin(social_type.APPLE, user.user, user.email, firstname, user.fullName.familyName, '');
         }
         else {
-            alert("something went wrong")
+            alert('something went wrong');
         }
     }
 
     function schoolSelectionDone() {
-        setShowSchoolDialog(false)
-        let schoolId = school
+        setShowSchoolDialog(false);
+        let schoolId = school;
         if (schoolId == 0) {
-            schoolId = ""
+            schoolId = '';
         }
-        console.log("schoolId", schoolId)
+        console.log('schoolId', schoolId);
         // Toast.showLoading("Please wait...")
         fetch.post(ADD_SCHOOL, { school: schoolId })
             .then((result) => {
-                console.log("result", result)
-                Toast.show(result.msg)
+                console.log('result', result);
+                Toast.show(result.msg);
             })
             .catch((error) => {
-                console.log("error", error)
-                Toast.show("something went wrong!")
+                console.log('error', error);
+                Toast.show('something went wrong!');
             })
             .finally(() => {
-                Toast.hide()
+                Toast.hide();
                 navigation.dispatch(
                     CommonActions.reset({
                         index: 1,
@@ -439,27 +375,27 @@ export default function Login(props) {
                         ],
                     })
                 );
-            })
+            });
 
     }
 
     function setSchoolSelection(item, index) {
         let schools = schoolList.map((element, index1) => {
-            element.selected = false
+            element.selected = false;
             if (index == index1) {
-                element.selected = true
-                setSchool(element.value)
+                element.selected = true;
+                setSchool(element.value);
             }
-            return element
-        })
+            return element;
+        });
 
-        setSchoolList(schools)
+        setSchoolList(schools);
     }
 
     return (
         < View style={styles.MainContainer} >
             {/* <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}> */}
-            < ImageBackground style={{ left: 0, top: 0, width: Dimensions.get("window").width, height: Dimensions.get("window").height, position: "absolute" }} resizeMode={"cover"} source={require("../../../assets/images/login_bg.png")} />
+            < ImageBackground style={{ left: 0, top: 0, width: Dimensions.get('window').width, height: Dimensions.get('window').height, position: 'absolute' }} resizeMode={'cover'} source={require('../../../assets/images/login_bg.png')} />
             {/* <KeyboardAvoidingView behavior="padding" enabled keyboardVerticalOffset={Platform.select({ ios: Dimensions.get('window').height == 812 || Dimensions.get('window').width == 812 ? 85 : 64, android: -500 })}> */}
             {/* ------------------CenterView ----------------- */}
             <View style={styles.CenterView} >
@@ -474,12 +410,12 @@ export default function Login(props) {
 
                     {/* ------------------ Email ----------------- */}
                     <CustomTextInput
-                        placeholder='Email'
-                        keyboardType={"email-address"}
-                        textContentType={"emailAddress"}
+                        placeholder="Email"
+                        keyboardType={'email-address'}
+                        textContentType={'emailAddress'}
                         icon={require('../../../assets/images/emailicon.png')}
                         onChangeText={(text) => setEmail(text)}
-                        returnKeyType={"next"}
+                        returnKeyType={'next'}
                         blurOnSubmit={false}
                         onSubmitEditing={() => passwordRef.focus()}
                         value={email}
@@ -490,14 +426,14 @@ export default function Login(props) {
                     {/* ------------------ Password ----------------- */}
                     <CustomTextInput
                         textInputRef={(ref) => passwordRef = ref}
-                        placeholder='Password'
+                        placeholder="Password"
                         secureTextEntry={!showPassword}
-                        textContentType={"password"}
+                        textContentType={'password'}
                         icon={require('../../../assets/images/passwordicon.png')}
                         onChangeText={(text) => setPassword(text)}
                         setHidePass={(value) => {
-                            console.log(value)
-                            setShowPassword(!value)
+                            console.log(value);
+                            setShowPassword(!value);
                         }}
                         value={password}
                         maxLength={25}
@@ -505,7 +441,7 @@ export default function Login(props) {
                     <View marginTop={0} height={verticalScale(10)} />
 
                     {/* ------------------ Forgot Password ----------------- */}
-                    <View style={{ alignSelf: "flex-end" }}>
+                    <View style={{ alignSelf: 'flex-end' }}>
                         <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('ForgotPassword')}>
                             <CustomText style={[styles.TextBlack1]}>Forgot password?</CustomText>
                         </TouchableOpacity>
@@ -514,8 +450,8 @@ export default function Login(props) {
                     <View marginTop={0} height={verticalScale(12)} />
 
                     <CustomButton title="Login" onPress={() => {
-                        console.log("login attempted")
-                        signIn()
+                        console.log('login attempted');
+                        signIn();
                     }} />
 
                     <View marginTop={0} height={verticalScale(20)} />
@@ -524,7 +460,7 @@ export default function Login(props) {
 
                 <View marginTop={0} height={verticalScale(15)} />
 
-                <View style={{ alignItems: 'center', flexDirection: "row", marginStart: moderateScale(25), marginEnd: moderateScale(25) }}>
+                <View style={{ alignItems: 'center', flexDirection: 'row', marginStart: moderateScale(25), marginEnd: moderateScale(25) }}>
                     <View style={styles.lineView} />
                     <CustomText style={styles.TextBlack1}>OR</CustomText>
                     <View style={styles.lineView} />
@@ -545,7 +481,7 @@ export default function Login(props) {
                     </TouchableOpacity>
 
 
-                    {Platform.OS == "ios" ? <TouchableOpacity activeOpacity={0.8} style={styles.ButtonContainer} onPress={() => onAppleButtonPress()} >
+                    {Platform.OS == 'ios' ? <TouchableOpacity activeOpacity={0.8} style={styles.ButtonContainer} onPress={() => onAppleButtonPress()} >
                         <Image style={styles.imageContainer} source={require('../../../assets/images/apple.png')} />
                     </TouchableOpacity> : <View />}
 
@@ -561,7 +497,7 @@ export default function Login(props) {
                         buttonStyle={{ paddingStart: moderateScale(10), paddingEnd: moderateScale(10), paddingTop: moderateScale(5), paddingBottom: moderateScale(5) }}
                         textStyle={{ fontSize: moderateScale(12) }}
                         onPress={() => {
-                            navigate("Register")
+                            navigate('Register');
                         }} />
                 </View>
 
@@ -621,7 +557,7 @@ export default function Login(props) {
             </Modal> */}
         </View >
     );
-};
+}
 
 const styles = StyleSheet.create({
     MainContainer: {
@@ -633,7 +569,7 @@ const styles = StyleSheet.create({
     CenterView: {
         width: Dimensions.get('window').width,
         flex: 1,
-        padding: moderateScale(20)
+        padding: moderateScale(20),
     },
     cardView: {
         margin: moderateScale(6),
@@ -654,26 +590,26 @@ const styles = StyleSheet.create({
     },
     ViewContainer1: {
         alignItems: 'center',
-        justifyContent: "center",
-        flexDirection: "row",
+        justifyContent: 'center',
+        flexDirection: 'row',
         marginTop: moderateScale(8),
-        marginBottom: moderateScale(8)
+        marginBottom: moderateScale(8),
     },
     TextBlack1: {
         margin: moderateScale(8),
         color: colors.accent_color,
         fontSize: moderateScale(14),
-        textAlign: 'center'
+        textAlign: 'center',
     },
     lineView: {
         height: 1,
         backgroundColor: colors.accent_color,
-        flex: 1
+        flex: 1,
     },
     HorizontalContainer: {
         flex: 1,
-        flexDirection: "row",
-        justifyContent: "center",
+        flexDirection: 'row',
+        justifyContent: 'center',
         alignItems: 'center',
     },
     ButtonContainer: {
@@ -682,7 +618,7 @@ const styles = StyleSheet.create({
         padding: moderateScale(15),
         alignItems: 'center',
         justifyContent: 'center',
-        alignSelf: "center",
+        alignSelf: 'center',
         borderRadius: moderateScale(35),
         flexDirection: 'row',
         ...Platform.select({
@@ -701,13 +637,13 @@ const styles = StyleSheet.create({
         color: colors.accent_color,
         fontSize: moderateScale(26),
         textAlign: 'center',
-        margin: moderateScale(16)
+        margin: moderateScale(16),
     },
     imageContainer: {
         height: verticalScale(26),
         width: scale(26),
         resizeMode: 'contain',
-        alignSelf: 'center'
+        alignSelf: 'center',
     },
-    appleBtn: { height: verticalScale(60), width: scale(60), margin: moderateScale(10) }
+    appleBtn: { height: verticalScale(60), width: scale(60), margin: moderateScale(10) },
 });

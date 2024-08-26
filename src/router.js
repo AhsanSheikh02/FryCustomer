@@ -14,7 +14,6 @@ import OTPVerification from './screens/auth/OTPVerification';
 import PaymentScreen from './screens/auth/PaymentScreen';
 import Register from './screens/auth/Register';
 import ResetPassword from './screens/auth/ResetPassword';
-import SocialRegister from './screens/auth/SocialRegister';
 import Splash from './screens/auth/Splash';
 import SubscriptionPage from './screens/auth/SubscriptionPage';
 import Event2DetailsScreen from './screens/events/Event2DetailsScreen';
@@ -55,7 +54,6 @@ export default function Router() {
                             headerBackImage: () => <Image style={[{ height: verticalScale(30), width: scale(30), resizeMode: 'contain', tintColor: colors.main_color }, Platform.OS == 'ios' ? { marginLeft: 20 } : {}]} source={require('../assets/images/left.png')} />,
                         }
                     )} />
-                    <Stack.Screen name="SocialRegister" component={SocialRegister} />
                     <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
                     <Stack.Screen name="ResetPassword" component={ResetPassword} />
                     <Stack.Screen name="ChangePassword" component={ChangePassword} />
