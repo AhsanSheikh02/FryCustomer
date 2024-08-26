@@ -11,107 +11,105 @@ import { colors } from '../../utils/constants';
 
 export default function OTPVerification(props) {
     const { navigation, route } = props;
-    const { email, password, isForgot } = route.params
-    console.log("props: ", route)
+    const { email, password, isForgot } = route.params;
+    console.log('props: ', route);
     //1 - DECLARE VARIABLES
-    const [code, setCode] = useState("");
-    const [forgotKey, setForgotKey] = useState(isForgot);
-    const { state, handleSendOTP, handleVerifyOTP, handleLogin, handleVerifyOTP2, handleResendOTP2 } = useAuth();
-    const user = state.user;
+    const [code, setCode] = useState('');
+    const { handleSendOTP, handleVerifyOTP, handleLogin, handleVerifyOTP2, handleResendOTP2 } = useAuth();
 
     function callApiforSendOTP() {
-        Toast.showLoading("Please wait..")
-        setCode("")
+        Toast.showLoading('Please wait..');
+        setCode('');
 
         handleSendOTP(email)
             .then((response) => {
-                Toast.hide()
-                console.log("SendOTP-res: ", response)
-                Toast.show(response.message)
+                Toast.hide();
+                console.log('SendOTP-res: ', response);
+                Toast.show(response.message);
             })
             .catch((error) => {
-                Toast.hide()
+                Toast.hide();
                 console.log(error.message);
-                Toast.show(error.message)
-            })
+                Toast.show(error.message);
+            });
     }
 
 
     function callApiforForgotPasswordResendOTP() {
-        Toast.showLoading("Please wait..")
-        setCode("")
+        Toast.showLoading('Please wait..');
+        setCode('');
 
         handleResendOTP2(email)
             .then((response) => {
-                Toast.hide()
+                Toast.hide();
                 // console.log("ForgotPasswordResendOTP-res: ", response)
-                Toast.show(response.message)
+                Toast.show(response.message);
             })
             .catch((error) => {
-                Toast.hide()
+                Toast.hide();
                 console.log(error.message);
-                Toast.show(error.message)
-            })
+                Toast.show(error.message);
+            });
 
     }
 
     function onPressResendOTP() {
-        if (forgotKey) {
-            callApiforForgotPasswordResendOTP()
+        if (isForgot) {
+            callApiforForgotPasswordResendOTP();
         } else {
-            callApiforSendOTP()
+            callApiforSendOTP();
         }
     }
 
     function onPressSubmit() {
-        if (forgotKey) {
-            callApiforPasswordVerifacation()
+        if (isForgot) {
+            callApiforPasswordVerifacation();
         } else {
-            callApiforVerifyOTP()
+            callApiforVerifyOTP();
         }
     }
 
     function callApiforPasswordVerifacation() {
-        if (code == "" || code.length < 4) {
-            Toast.show("Please enter the OTP!")
+        if (code == '' || code.length < 4) {
+            Toast.show('Please enter the OTP!');
         } else {
-            Toast.showLoading("Please wait..")
+            Toast.showLoading('Please wait..');
             handleVerifyOTP2(email, code)
                 .then((response) => {
-                    console.log("PasswordVerifacation-res: ", response)
+                    console.log('PasswordVerifacation-res: ', response);
                     if (response.status == 1) {
-                        Toast.hide()
-                        Toast.showSuccess(response.message)
-                        navigation.navigate("ResetPassword", { email })
+                        Toast.hide();
+                        Toast.showSuccess(response.message);
+                        navigation.navigate('ResetPassword', { email });
                     } else {
-                        Toast.hide()
-                        Toast.show(response.message)
+                        Toast.hide();
+                        Toast.show(response.message);
                     }
                 })
                 .catch((error) => {
-                    Toast.hide()
+                    Toast.hide();
                     console.log(error.message);
-                    Toast.show(error.message)
-                })
+                    Toast.show(error.message);
+                });
         }
     }
 
     function callApiforVerifyOTP() {
 
-        if (code == "" || code.length < 4) {
-            Toast.show("Please enter the OTP!")
+        if (code == '' || code.length < 4) {
+            Toast.show('Please enter the OTP!');
         } else {
-            Toast.showLoading("Please wait..")
+            Toast.showLoading('Please wait..');
             handleVerifyOTP(email, code)
                 .then((response) => {
                     // console.log("VerifyOTP-res: ", response)
                     if (response.status == 1) {
-                        Toast.hide()
-                        Toast.showSuccess(response.message)
+                        Toast.hide();
+                        Toast.showSuccess(response.message);
 
                         handleLogin(email, password)
                             .then((response) => {
-                                Toast.hide()
+                                Toast.hide();
                                 // console.log("res: ", response)
                                 if (response.status == 1) {
                                     // Toast.showSuccess(response.message)
@@ -124,36 +122,41 @@ export default function OTPVerification(props) {
                                         })
                                     );
                                 } else {
-                                    Toast.show(response.message)
+                                    Toast.show(response.message);
                                 }
                             })
                             .catch((error) => {
-                                Toast.hide()
+                                Toast.hide();
                                 console.log(error.message);
-                                Toast.show(error.message)
-                            })
+                                Toast.show(error.message);
+                                setCode('');
+                            });
 
                     } else {
-                        Toast.hide()
-                        Toast.show(response.message)
+                        Toast.hide();
+                        Toast.show(response.message);
+                        setCode('');
+
                     }
                 })
                 .catch((error) => {
-                    Toast.hide()
+                    Toast.hide();
                     console.log(error.message);
-                    Toast.show(error.message)
-                })
+                    setCode('');
+
+                    Toast.show(error.message);
+                });
         }
     }
 
     return (
-        <KeyboardAvoidingView style={styles.MainContainer} behavior="padding" enabled={Platform.OS == "ios"}>
+        <KeyboardAvoidingView style={styles.MainContainer} behavior="padding" enabled={Platform.OS == 'ios'}>
             {/* ------------------CenterView ----------------- */}
-            <ImageBackground style={{ left: 0, top: 0, width: Dimensions.get("window").width, height: Dimensions.get("window").height, position: "absolute" }} resizeMode={"cover"} source={require("../../../assets/images/login_bg.png")} />
+            <ImageBackground style={{ left: 0, top: 0, width: Dimensions.get('window').width, height: Dimensions.get('window').height, position: 'absolute' }} resizeMode={'cover'} source={require('../../../assets/images/login_bg.png')} />
             <View style={styles.CenterView} >
 
-                <TouchableOpacity activeOpacity={0.8} style={{ position: "absolute", margin: moderateScale(18) }} onPress={() => navigation.pop()}>
-                    <Image style={{ height: verticalScale(36), width: scale(36), resizeMode: 'contain', tintColor: colors.main_color }} source={require("../../../assets/images/left.png")} />
+                <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', margin: moderateScale(18) }} onPress={() => navigation.pop()}>
+                    <Image style={{ height: verticalScale(36), width: scale(36), resizeMode: 'contain', tintColor: colors.main_color }} source={require('../../../assets/images/left.png')} />
                 </TouchableOpacity>
 
                 <View height={verticalScale(10)} />
@@ -174,22 +177,23 @@ export default function OTPVerification(props) {
                     <View height={verticalScale(20)} />
 
                     <OTPInputView
-                        style={{ height: verticalScale(80), width: "90%", justifyContent: "center", alignSelf: "center" }}
+                        style={{ height: verticalScale(80), width: '90%', justifyContent: 'center', alignSelf: 'center' }}
                         pinCount={4}
+                        editable
                         code={code} //You can supply this prop or not. The component will be used as a controlled / uncontrolled component respectively.
-                        onCodeChanged={code => { setCode(code) }}
+                        onCodeChanged={code => { setCode(code); }}
                         autoFocusOnLoad={true}
-                        placeholderTextColor={"black"}
+                        placeholderTextColor={'black'}
                         codeInputFieldStyle={styles.underlineStyleBase}
                         codeInputHighlightStyle={styles.underlineStyleHighLighted}
                         onCodeFilled={(code => {
-                            console.log(`Code is ${code}`)
+                            console.log(`Code is ${code}`);
                         })}
 
                     />
                     <View height={verticalScale(30)} />
-                    <CustomButton buttonStyle={{ width: scale(200), alignSelf: "center" }} title="Submit" onPress={() => {
-                        onPressSubmit()
+                    <CustomButton buttonStyle={{ width: scale(200), alignSelf: 'center' }} title="Submit" onPress={() => {
+                        onPressSubmit();
                     }} />
 
                     <View marginTop={0} height={verticalScale(20)} />
@@ -205,7 +209,7 @@ export default function OTPVerification(props) {
                         buttonStyle={{ paddingStart: moderateScale(10), paddingEnd: moderateScale(10), paddingTop: moderateScale(5), paddingBottom: moderateScale(5) }}
                         textStyle={{ fontSize: moderateScale(12) }}
                         onPress={() => {
-                            onPressResendOTP()
+                            onPressResendOTP();
                         }} />
                 </View>
             </View>
@@ -224,7 +228,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: Dimensions.get('window').width,
         padding: moderateScale(20),
-        marginTop: moderateScale(20)
+        marginTop: moderateScale(20),
     },
     cardView: {
         margin: moderateScale(6),
@@ -250,43 +254,42 @@ const styles = StyleSheet.create({
     },
     ViewContainer1: {
         alignItems: 'center',
-        justifyContent: "center",
-        flexDirection: "row",
+        justifyContent: 'center',
+        flexDirection: 'row',
         marginTop: moderateScale(8),
-        marginBottom: moderateScale(8)
+        marginBottom: moderateScale(8),
     },
     TextBlack1: {
         margin: moderateScale(8),
         color: 'black',
         fontSize: moderateScale(14),
-        textAlign: 'center'
+        textAlign: 'center',
     },
     SubContainer: {
         width: Dimensions.get('window').width,
         marginTop: 0,
-        marginLeft: 0,
         marginLeft: 0,
         backgroundColor: 'transparent',
     },
     TextContainer: {
         fontSize: 15,
         color: 'grey',
-        textAlign: 'center'
+        textAlign: 'center',
     },
     TextContainer1: {
         fontSize: 20,
         fontWeight: 'bold',
         color: 'black',
-        textAlign: 'center'
+        textAlign: 'center',
     },
     underlineStyleBase: {
         width: scale(50),
         height: verticalScale(50),
         borderRadius: 8,
-        backgroundColor: "white",
+        backgroundColor: 'white',
         margin: moderateScale(0),
         fontSize: moderateScale(18),
-        fontWeight: "bold",
+        fontWeight: 'bold',
         color: colors.accent_color,
         ...Platform.select({
             ios: {
@@ -302,7 +305,7 @@ const styles = StyleSheet.create({
     },
     underlineStyleHighLighted: {
         borderColor: colors.accent_color,
-        borderWidth: 2
+        borderWidth: 2,
     },
 
 });

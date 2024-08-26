@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { Alert, FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
@@ -52,7 +53,7 @@ const PastEventRoute = ({ pastEventList, render, itemSeparatorComponent }) => {
 export default function Event(props) {
     const { navigation, route } = props;
     console.log('route', route);
-    const { state, handleLogout, handleEventList, handleJoindEventList, handlePastEventList } = useAuth();
+    const { state, handleEventList, handleJoindEventList, handlePastEventList } = useAuth();
     const user = state.user;
 
     //1 - DECLARE VARIABLES
@@ -68,15 +69,6 @@ export default function Event(props) {
         callApiforEventList(2);
         callApiforJoinedEventList();
         callApiforPastEventList();
-        // navigation.addListener('focus', () => {
-        //     callApiforEventList()
-        // });
-
-        // if (selectedTab == ALL_EVENTS_TAB) {
-        //     callApiforEventList()
-        // } else {
-        //     callApiforJoinedEventList()
-        // }
     }, [is_data]);
 
     function render({ item, index }) {
@@ -256,17 +248,17 @@ export default function Event(props) {
                     <View style={styles.ViewContainer}>
                         <TouchableOpacity activeOpacity={0.8} style={{ flex: 1 }} onPress={() => changeEventList(ALL_EVENTS_TAB)}>
                             <View style={[styles.ViewContainer1, selectedTab == ALL_EVENTS_TAB ? { backgroundColor: colors.main_color, borderBottomLeftRadius: 30, borderTopLeftRadius: 30 } : {}]}>
-                                <CustomText style={[styles.TextContainer], { color: selectedTab == ALL_EVENTS_TAB ? colors.secondary_color : colors.main_color }}>Events</CustomText>
+                                <CustomText style={[styles.TextContainer, { color: selectedTab == ALL_EVENTS_TAB ? colors.secondary_color : colors.main_color }]}>Events</CustomText>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.8} style={{ flex: 1 }} onPress={() => changeEventList(SIGNED_EVENTS_TAB)}>
                             <View style={[styles.ViewContainer1, selectedTab == SIGNED_EVENTS_TAB ? { backgroundColor: colors.main_color } : {}]}>
-                                <CustomText style={[styles.TextContainer], { color: selectedTab == SIGNED_EVENTS_TAB ? colors.secondary_color : colors.main_color }}>My Events</CustomText>
+                                <CustomText style={[styles.TextContainer, { color: selectedTab == SIGNED_EVENTS_TAB ? colors.secondary_color : colors.main_color }]}>My Events</CustomText>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.8} style={{ flex: 1 }} onPress={() => changeEventList(PAST_EVENTS_TAB)}>
                             <View style={[styles.ViewContainer1, selectedTab == PAST_EVENTS_TAB ? { backgroundColor: colors.main_color, borderTopRightRadius: 30, borderBottomRightRadius: 30 } : {}]}>
-                                <CustomText style={[styles.TextContainer], { color: selectedTab == PAST_EVENTS_TAB ? colors.secondary_color : colors.main_color }}>Past Events</CustomText>
+                                <CustomText style={[styles.TextContainer, { color: selectedTab == PAST_EVENTS_TAB ? colors.secondary_color : colors.main_color }]}>Past Events</CustomText>
                             </View>
                         </TouchableOpacity>
                     </View>

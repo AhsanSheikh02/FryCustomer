@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { CommonActions } from '@react-navigation/native';
 import React, { useEffect, useRef, useState } from 'react';
 import { Dimensions, Image, ImageBackground, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
@@ -19,8 +20,7 @@ export default function PaymentScreen(props) {
     const plan_price = coupon != '' ? plan.price - (plan.price * coupon.percent_off / 100) : plan.price;
     const couponId = coupon != '' ? coupon.id : '';
 
-    const { state, handleSubscribe, handleUserProfile, handlePayment, handleCartList } = useAuth();
-    const user = state.user;
+    const { handleSubscribe, handleUserProfile, handlePayment, handleCartList } = useAuth();
 
     const client = new Stripe(config.stripe_api_key);
 
@@ -28,8 +28,6 @@ export default function PaymentScreen(props) {
     var cardHolderRef = useRef(null);
     var expiryRef = useRef(null);
     var cvvRef = useRef(null);
-
-    var is_order = false;
 
     const [paymentDone, setPaymentDone] = useState(false);
     const [cardHolderName, setCardHolderName] = useState('');
@@ -46,7 +44,6 @@ export default function PaymentScreen(props) {
         if (isOrder) {
             callApiforCartList();
         }
-
     }, []);
 
     function callApiforCartList() {
