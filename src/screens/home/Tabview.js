@@ -29,7 +29,7 @@ const SettingStack = createStackNavigator();
 
 {/* ------------------ home ----------------- */ }
 function HomeStackScreen(props) {
-    const { state, handleLogout } = useAuth();
+    const { handleLogout } = useAuth();
     const { navigation } = props;
 
     function showLogoutDialog() {
@@ -240,7 +240,6 @@ export default function TabView() {
 
     useEffect(() => {
         const user = state.user;
-        console.log('user', user);
         if (user && user.subscriptions != '' && user.subscribe == 0 && planList.length > 0) {
             getAvailablePurchases();
         }
@@ -326,7 +325,7 @@ export default function TabView() {
             subscription_id: plan.id,
         })
             .then((result) => {
-                console.log('result', result);
+
                 Toast.show(result.msg);
                 Toast.hide();
                 if (result.status == 1) {
@@ -334,7 +333,7 @@ export default function TabView() {
                     handleUserProfile()
                         .then((response) => {
                             Toast.hide();
-                            console.log('IAPsubscription-res: ', response);
+
                             let title = 'Restore Successful';
                             let message = 'You have successfully restored ' + plan.title;
                             Alert.alert(
@@ -352,7 +351,7 @@ export default function TabView() {
                 }
             })
             .catch((error) => {
-                console.log('error', error);
+
                 Toast.show('something went wrong!');
             })
             .finally(() => {
@@ -362,9 +361,9 @@ export default function TabView() {
 
     const getItems = async () => {
         try {
-            console.log('itemSubs ', itemSubs);
+
             const Products = await RNIap.getSubscriptions(itemSubs);
-            console.log('IAP Su', Products);
+
         } catch (err) {
             console.warn('IAP error', err.code, err.message, err);
         }

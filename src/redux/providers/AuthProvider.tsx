@@ -76,9 +76,6 @@ function AuthProvider(props) {
       let email = await AsyncStorage.getItem(EMAIL_KEY);
       let role = await AsyncStorage.getItem(ROLE_KEY);
 
-      // console.log("user: ", user)
-      // console.log("token123: ", token)
-
       if (!token || token == '') {
         await handleLogout();
         return {isLoggedIn: false};
@@ -107,11 +104,6 @@ function AuthProvider(props) {
         role_id,
       };
       let res = await fetch.post(UPDATE_PROFILE, data);
-      if (res.status == 1) {
-        let updateData = res.data;
-        let updateProfileData = JSON.stringify(updateData);
-        // console.log("updateData: ", updateProfileData)
-      }
       return res;
     } catch (error) {
       throw new Error(error);
@@ -122,10 +114,6 @@ function AuthProvider(props) {
   const handleDeleteUser = async () => {
     try {
       let res = await fetch.deleteReq(DELETE_ACCOUNT);
-      // if (res.status == 1) {
-      //     let deleteAccountRes = JSON.stringify(res.data)
-      //     console.log("deleteAccountRes: ", deleteAccountRes)
-      // }
       return res;
     } catch (error) {
       throw new Error(error);
@@ -159,7 +147,6 @@ function AuthProvider(props) {
       if (res.status == 1) {
         let user = res.data;
         let strUser = JSON.stringify(user);
-        console.log('UserProfile: ', strUser);
 
         let data_ = [
           [USER_KEY, strUser],
@@ -191,7 +178,6 @@ function AuthProvider(props) {
       if (res.status == 1) {
         let user = res.data;
         let strUser = JSON.stringify(user);
-        console.log('struser: ', strUser);
 
         let data_ = [
           [USER_KEY, strUser],
@@ -238,7 +224,6 @@ function AuthProvider(props) {
       if (res.status == 1 || res.status == 2) {
         let user = res.data;
         let strUser = JSON.stringify(user).toString();
-        console.log('struser: ', strUser);
 
         let data_ = [
           [USER_KEY, strUser],
@@ -338,7 +323,6 @@ function AuthProvider(props) {
         device_token,
         device_type,
       };
-      console.log({data});
 
       let res = await fetch.post(REGISTER, data);
       return res;

@@ -12,7 +12,7 @@ const get = (url, options = {}) => {
 
     let authHeader = globalConfig.getToken()
       ? `Bearer ${globalConfig.getToken()}`
-      : ""
+      : '';
 
     // console.log("Url: ", url)
     // console.log("authHeader: ", authHeader)
@@ -23,12 +23,11 @@ const get = (url, options = {}) => {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        Authorization: authHeader
+        Authorization: authHeader,
       },
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("get-API-response: ", data)
         if (data.status == 0) {
           reject(new Error(data.message));
         } else {
@@ -55,7 +54,7 @@ const post = (url, data, method = 'POST', type = 'none') => {
 
     let authHeader = globalConfig.getToken()
       ? `Bearer ${globalConfig.getToken()}`
-      : ""
+      : '';
 
     // console.log("Url: ", url)
     // console.log("authHeader: ", authHeader)
@@ -68,13 +67,13 @@ const post = (url, data, method = 'POST', type = 'none') => {
         Accept: 'application/json',
         Authorization: authHeader,
         'Content-Type':
-          type === "formData"
+          type === 'formData'
             ? 'multipart/form-data'
             : 'application/json',
       },
-      body: type == "formData"
+      body: type == 'formData'
         ? data
-        : JSON.stringify(data)
+        : JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => {
@@ -86,7 +85,7 @@ const post = (url, data, method = 'POST', type = 'none') => {
         }
       })
       .catch((error) => {
-        console.log("error:", error)
+        console.log('error:', error);
         reject(error);
       });
   });
@@ -97,15 +96,15 @@ const deleteReq = (url, method = 'DELETE') => {
 
     let authHeader = globalConfig.getToken()
       ? `Bearer ${globalConfig.getToken()}`
-      : ""
+      : '';
 
     fetch(url, {
       method: method,
       headers: {
         Accept: 'application/json',
         Authorization: authHeader,
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     }).then((res) => res.json())
       .then((result) => {
         //  console.log("response:", result)
@@ -115,7 +114,7 @@ const deleteReq = (url, method = 'DELETE') => {
           resolve(result);
         }
       }).catch((error) => {
-        console.log("error:", error)
+        console.log('error:', error);
         reject(error);
       });
   });
