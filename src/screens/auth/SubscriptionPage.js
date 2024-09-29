@@ -229,42 +229,95 @@ export default function SubscriptionPage(props) {
       Alert.alert(err.message);
     }
   };
+  // const getItems = async () => {
+  //   try {
+  //     const Products = await RNIap.getSubscriptions(itemSubs);
+  //     setProducts(Products);
+  //   } catch (err) {
+  //     console.warn('IAP error', err.code, err.message, err);
+  //   }
+  // };
+
   const getItems = async () => {
     try {
+      console.log('Fetching subscriptions...');
       const Products = await RNIap.getSubscriptions(itemSubs);
+      console.log('Available Products:', Products);
+      if (Products.length === 0) {
+        addErrorLog(
+          'No Products Found',
+          'The getSubscriptions call returned an empty array',
+        );
+      }
+      // Store the full product information
       setProducts(Products);
     } catch (err) {
-      console.warn('IAP error', err.code, err.message, err);
+      console.warn('IAP error', err.code, err.message);
+      addErrorLog('Get Items Error', `${err.code}: ${err.message}`);
     }
   };
+
+  // const requestIAPSubscription = async item => {
+  //   setLoading(true);
+  //   const subscriptionRequest = {
+  //     sku: item.sku,
+  //     subscriptionOffers: [
+  //       {
+  //         sku: item.sku,
+  //         offerToken: item.offerToken,
+  //       },
+  //     ],
+  //   };
+  //   try {
+  //     const params = Platform.select({
+  //       ios: {
+  //         sku: item.sku,
+  //         andDangerouslyFinishTransactionAutomaticallyIOS: false,
+  //       },
+  //       android: subscriptionRequest,
+  //     });
+  //     console.log({params});
+  //     await RNIap.requestSubscription(params);
+  //   } catch (err) {
+  //     setLoading(false);
+  //     console.warn(err.code, err.message);
+  //   }
+  // };
 
   const requestIAPSubscription = async item => {
     setLoading(true);
-    const subscriptionRequest = {
-      sku: item.sku,
-      subscriptionOffers: [
-        {
-          sku: item.sku,
-          offerToken: item.offerToken,
-        },
-      ],
-    };
     try {
-      const params = Platform.select({
-        ios: {
+      console.log('Requesting subscription for:', item.sku);
+      const product = products.find(p => p.productId === item.sku);
+
+      if (!product) {
+        throw new Error(`Product not found for sku: ${item.sku}`);
+      }
+
+      const subscriptionOffers = product.subscriptionOfferDetails;
+
+      if (!subscriptionOffers || subscriptionOffers.length === 0) {
+        throw new Error(`No subscription offers found for sku: ${item.sku}`);
+      }
+
+      const purchase = await RNIap.requestSubscription({
+        sku: item.sku,
+        subscriptionOffers: subscriptionOffers.map(offer => ({
           sku: item.sku,
-          andDangerouslyFinishTransactionAutomaticallyIOS: false,
-        },
-        android: subscriptionRequest,
+          offerToken: offer.offerToken,
+        })),
+        andDangerouslyFinishTransactionAutomaticallyIOS: false,
       });
-      console.log({params});
-      await RNIap.requestSubscription(params);
+
+      console.log('Purchase successful:', purchase);
+      // The purchase will be handled by the purchaseUpdatedListener
     } catch (err) {
       setLoading(false);
-      console.warn(err.code, err.message);
+      console.warn('Purchase error:', err.code, err.message);
+      addErrorLog('Purchase Error', `${err.code}: ${err.message}`);
+      Alert.alert('Purchase Error', err.message);
     }
   };
-
   function buyIAPsubscription(plan, purchaseTime, isRestored) {
     debugger;
     setLoading(true);
