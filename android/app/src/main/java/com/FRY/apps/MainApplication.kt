@@ -1,4 +1,4 @@
-package com.yogacustomer
+package com.FRY.apps
 
 import android.app.Application
 import com.facebook.react.PackageList

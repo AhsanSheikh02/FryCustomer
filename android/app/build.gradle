@@ -77,9 +77,9 @@ android {
     ndkVersion rootProject.ext.ndkVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.yogacustomer"
+    namespace "com.FRY.apps"
     defaultConfig {
-        applicationId "com.yogacustomer"
+        applicationId "com.FRY.apps"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 53
