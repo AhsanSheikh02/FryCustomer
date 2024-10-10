@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* FRYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FRYTests.m */; };
-		00EEC7F62B418FD7F0560449 /* libPods-FRY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24667734EA8165B11B7B3717 /* libPods-FRY.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1977359AD7AA8FE64FAC918A /* libPods-FRY-FRYTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 797AFFC92DDB6D40AC093DF0 /* libPods-FRY-FRYTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* FRYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FRYTests.m */; };
-		347D05463A7B74B1BFDB8CCE /* libPods-FRY-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACD72BC73E3845343E6FAC2 /* libPods-FRY-tvOSTests.a */; };
+		4EF71505BF341F2DA75EFB7A /* libPods-FRY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F62A990AC85876E62A27E8 /* libPods-FRY.a */; };
 		60B37D0F25ED11CD009C4217 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60B37D0925ED11CD009C4217 /* Raleway-Light.ttf */; };
 		60B37D1025ED11CD009C4217 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60B37D0A25ED11CD009C4217 /* Raleway-Bold.ttf */; };
 		60B37D1125ED11CD009C4217 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60B37D0B25ED11CD009C4217 /* Raleway-Regular.ttf */; };
@@ -27,8 +27,8 @@
 		60EA98D4274CB22D002A659F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EA98D3274CB22D002A659F /* StoreKit.framework */; };
 		60FB2E9E2679F66800E2840D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60FB2E9D2679F66800E2840D /* GoogleService-Info.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		AE307B5939F5586EDD7721A7 /* libPods-FRY-FRYTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F788C71E2AD2645BD2124E /* libPods-FRY-FRYTests.a */; };
-		FB2FBB9D6EE311CC75DAC6AB /* libPods-FRY-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11455A5463493DE27112B735 /* libPods-FRY-tvOS.a */; };
+		B40E60651CBA9A0FE30C78F4 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3926FF1ED5A0EE9C384954E1 /* PrivacyInfo.xcprivacy */; };
+		FCB110831D48B88B89924AAC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 45FA34B9A709A0E9F4D619E3 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = "FRY";
+			remoteInfo = FRY;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -50,27 +50,26 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* FRYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FRYTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* FRYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FRYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* FRYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FRYTests.m"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* FRYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRYTests.m; sourceTree = "<group>"; };
 		04EDF855A3AD478EA6D54D16 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		0ACD72BC73E3845343E6FAC2 /* libPods-FRY-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRY-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		11455A5463493DE27112B735 /* libPods-FRY-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRY-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D458A6ABBE41B299E55FF7 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* F.R.Y..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = F.R.Y..app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "FRY/AppDelegate.h"; sourceTree = "<group>"; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FRY/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = FRY/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "FRY/Images.xcassets"; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "FRY/Info.plist"; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "FRY/main.m"; sourceTree = "<group>"; };
-		16063B16ADF6F56113779DD6 /* Pods-FRY-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-tvOS.release.xcconfig"; path = "Target Support Files/Pods-FRY-tvOS/Pods-FRY-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		179D0F4886A19FC11870DC03 /* Pods-FRY-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-FRY-tvOSTests/Pods-FRY-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FRY/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FRY/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FRY/main.m; sourceTree = "<group>"; };
 		2149D049A76E4E6FBE4B9E6D /* Raleway-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Light.ttf"; path = "../assets/fonts/Raleway-Light.ttf"; sourceTree = "<group>"; };
-		24667734EA8165B11B7B3717 /* libPods-FRY.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRY.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* FRY-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FRY-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* FRY-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FRY-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3926FF1ED5A0EE9C384954E1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = FRY/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3BFB5AE7A441439DB44ED136 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		43FC90374DAE62E639E72B09 /* Pods-FRY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY.debug.xcconfig"; path = "Target Support Files/Pods-FRY/Pods-FRY.debug.xcconfig"; sourceTree = "<group>"; };
+		45FA34B9A709A0E9F4D619E3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = FRY/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		5048F6628C7A4667BCE4C012 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Bold.ttf"; path = "../assets/fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		57ED5DAE4455CACABAA52363 /* Pods-FRY-FRYTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-FRYTests.debug.xcconfig"; path = "Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A1119D4E31D47C9B2569A24 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		5E70BD0007964A5EA170AF15 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		60B37D0925ED11CD009C4217 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
@@ -84,31 +83,28 @@
 		60DFD03F25E3D0C00013D66D /* FRY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FRY.entitlements; path = FRY/FRY.entitlements; sourceTree = "<group>"; };
 		60EA98D3274CB22D002A659F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		60FB2E9D2679F66800E2840D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		611ECFEE67FD81E41916C82B /* Pods-FRY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY.debug.xcconfig"; path = "Target Support Files/Pods-FRY/Pods-FRY.debug.xcconfig"; sourceTree = "<group>"; };
 		70771EC71163440BB0D61A8F /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		73FFC8D4B17A451882776310 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		762725D261B34A50A0C7C79C /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "FRY/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		7853116819181DD6A04C3C17 /* Pods-FRY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY.release.xcconfig"; path = "Target Support Files/Pods-FRY/Pods-FRY.release.xcconfig"; sourceTree = "<group>"; };
+		797AFFC92DDB6D40AC093DF0 /* libPods-FRY-FRYTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRY-FRYTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FRY/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85054A343CCF43DAA23B3DE9 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		8FC51FAF81054B209B295052 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		94F62A990AC85876E62A27E8 /* libPods-FRY.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRY.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AA464026574132BC51F3A6 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		96F788C71E2AD2645BD2124E /* libPods-FRY-FRYTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRY-FRYTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7FE84521EE2421E855EA808 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Regular.ttf"; path = "../assets/fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
-		C7D2A09E66AC694B6BAD9A4E /* Pods-FRY-FRYTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-FRYTests.debug.xcconfig"; path = "Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C977F1DB16784690AA9F5C5C /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		CB89E9C4483641EA8C7210F6 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		D73D083ACCC3C5C90816B19E /* Pods-FRY-FRYTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-FRYTests.release.xcconfig"; path = "Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE119736B8D94C33A34E9B85 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		DE81B33775D949A2BA280894 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		E52588CAFE2B494DABB935BC /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		E8D52BA8E83446E4BD3CE85D /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		ED3D44688087321BF4286FD5 /* Pods-FRY-FRYTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-FRYTests.release.xcconfig"; path = "Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests.release.xcconfig"; sourceTree = "<group>"; };
 		EDA3029A9EAE4A7BB40C1228 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		EF391039DA8AD9D09F89C99D /* Pods-FRY-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FRY-tvOSTests/Pods-FRY-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F9B2895E8858488423945779 /* Pods-FRY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY.release.xcconfig"; path = "Target Support Files/Pods-FRY/Pods-FRY.release.xcconfig"; sourceTree = "<group>"; };
 		FD13CDCA7188424C8F63BFEA /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		FD6309A4CD96A05C6A3EC5E0 /* Pods-FRY-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRY-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-FRY-tvOS/Pods-FRY-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE307B5939F5586EDD7721A7 /* libPods-FRY-FRYTests.a in Frameworks */,
+				1977359AD7AA8FE64FAC918A /* libPods-FRY-FRYTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,8 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00EEC7F62B418FD7F0560449 /* libPods-FRY.a in Frameworks */,
 				60EA98D4274CB22D002A659F /* StoreKit.framework in Frameworks */,
+				4EF71505BF341F2DA75EFB7A /* libPods-FRY.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB2FBB9D6EE311CC75DAC6AB /* libPods-FRY-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				347D05463A7B74B1BFDB8CCE /* libPods-FRY-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +148,7 @@
 				00E356F21AD99517003FC87E /* FRYTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = "FRYTests";
+			path = FRYTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -185,8 +179,9 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				60CF83DB25E399CD0007A6A2 /* FRY-Bridging-Header.h */,
+				3926FF1ED5A0EE9C384954E1 /* PrivacyInfo.xcprivacy */,
 			);
-			name = "FRY";
+			name = FRY;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -195,10 +190,8 @@
 				60EA98D3274CB22D002A659F /* StoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				24667734EA8165B11B7B3717 /* libPods-FRY.a */,
-				96F788C71E2AD2645BD2124E /* libPods-FRY-FRYTests.a */,
-				11455A5463493DE27112B735 /* libPods-FRY-tvOS.a */,
-				0ACD72BC73E3845343E6FAC2 /* libPods-FRY-tvOSTests.a */,
+				94F62A990AC85876E62A27E8 /* libPods-FRY.a */,
+				797AFFC92DDB6D40AC093DF0 /* libPods-FRY-FRYTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,6 +213,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D38072B3610C11D1AAE651F9 /* Pods */,
 				EFB21BDE29314F45A8098652 /* Resources */,
+				45FA34B9A709A0E9F4D619E3 /* PrivacyInfo.xcprivacy */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -240,14 +234,10 @@
 		D38072B3610C11D1AAE651F9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				611ECFEE67FD81E41916C82B /* Pods-FRY.debug.xcconfig */,
-				F9B2895E8858488423945779 /* Pods-FRY.release.xcconfig */,
-				C7D2A09E66AC694B6BAD9A4E /* Pods-FRY-FRYTests.debug.xcconfig */,
-				ED3D44688087321BF4286FD5 /* Pods-FRY-FRYTests.release.xcconfig */,
-				FD6309A4CD96A05C6A3EC5E0 /* Pods-FRY-tvOS.debug.xcconfig */,
-				16063B16ADF6F56113779DD6 /* Pods-FRY-tvOS.release.xcconfig */,
-				EF391039DA8AD9D09F89C99D /* Pods-FRY-tvOSTests.debug.xcconfig */,
-				179D0F4886A19FC11870DC03 /* Pods-FRY-tvOSTests.release.xcconfig */,
+				43FC90374DAE62E639E72B09 /* Pods-FRY.debug.xcconfig */,
+				7853116819181DD6A04C3C17 /* Pods-FRY.release.xcconfig */,
+				57ED5DAE4455CACABAA52363 /* Pods-FRY-FRYTests.debug.xcconfig */,
+				D73D083ACCC3C5C90816B19E /* Pods-FRY-FRYTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -288,12 +278,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FRYTests" */;
 			buildPhases = (
-				3BE686CF29951D32D206A3EE /* [CP] Check Pods Manifest.lock */,
+				DCC7F55A0E3F66E5476ED59C /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C62B5B918057465146062551 /* [CP] Copy Pods Resources */,
-				9B19A0C524FA0121E07A1BD3 /* [CP] Embed Pods Frameworks */,
+				A260782722F7FB745FF88A6C /* [CP] Embed Pods Frameworks */,
+				CFAC5C1F1C4D7F4B4DACD23B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,21 +299,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FRY" */;
 			buildPhases = (
-				22DB7CC2FDF8E9CC76E55ABB /* [CP] Check Pods Manifest.lock */,
+				530D86860F5F6FA8A4C3BEF2 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				3789A4BB3F92DCCB694637CA /* [CP] Copy Pods Resources */,
-				0A1B73A69CD6AD83EFFCB43A /* [CP] Embed Pods Frameworks */,
+				7B0ADFDD1A337E0E6A2C0830 /* [CP] Embed Pods Frameworks */,
+				CE343CF32690CAD513D016F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "FRY";
-			productName = "FRY";
+			name = FRY;
+			productName = FRY;
 			productReference = 13B07F961A680F5B00A75B9A /* F.R.Y..app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -331,7 +321,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FRY-tvOS" */;
 			buildPhases = (
-				9E92A362646F3EA469083372 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -351,7 +340,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "FRY-tvOSTests" */;
 			buildPhases = (
-				74A57E8D9FF7BCD2539C57C4 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -436,6 +424,7 @@
 				60FB2E9E2679F66800E2840D /* GoogleService-Info.plist in Resources */,
 				60B37D1425ED11CD009C4217 /* OpenSans-Regular.ttf in Resources */,
 				60B37D0F25ED11CD009C4217 /* Raleway-Light.ttf in Resources */,
+				B40E60651CBA9A0FE30C78F4 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+				FCB110831D48B88B89924AAC /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,29 +459,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		0A1B73A69CD6AD83EFFCB43A /* [CP] Embed Pods Frameworks */ = {
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FRY/Pods-FRY-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/NodeMediaClient/NodeMediaClient.framework/NodeMediaClient",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "Bundle React Native Code And Images";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodeMediaClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FRY/Pods-FRY-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		22DB7CC2FDF8E9CC76E55ABB /* [CP] Check Pods Manifest.lock */ = {
+		530D86860F5F6FA8A4C3BEF2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -513,21 +497,47 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+		7B0ADFDD1A337E0E6A2C0830 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FRY/Pods-FRY-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/NodeMediaClient/NodeMediaClient.framework/NodeMediaClient",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
 			);
-			name = "Bundle React Native Code And Images";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodeMediaClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FRY/Pods-FRY-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
-		3789A4BB3F92DCCB694637CA /* [CP] Copy Pods Resources */ = {
+		A260782722F7FB745FF88A6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/NodeMediaClient/NodeMediaClient.framework/NodeMediaClient",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodeMediaClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE343CF32690CAD513D016F7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -553,93 +563,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FRY/Pods-FRY-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3BE686CF29951D32D206A3EE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FRY-FRYTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74A57E8D9FF7BCD2539C57C4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FRY-tvOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9B19A0C524FA0121E07A1BD3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/NodeMediaClient/NodeMediaClient.framework/NodeMediaClient",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NodeMediaClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9E92A362646F3EA469083372 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FRY-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C62B5B918057465146062551 /* [CP] Copy Pods Resources */ = {
+		CFAC5C1F1C4D7F4B4DACD23B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -663,6 +587,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FRY-FRYTests/Pods-FRY-FRYTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCC7F55A0E3F66E5476ED59C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FRY-FRYTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -759,7 +705,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7D2A09E66AC694B6BAD9A4E /* Pods-FRY-FRYTests.debug.xcconfig */;
+			baseConfigurationReference = 57ED5DAE4455CACABAA52363 /* Pods-FRY-FRYTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -767,7 +713,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "FRYTests/Info.plist";
+				INFOPLIST_FILE = FRYTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -775,7 +721,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.FRY.apps";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FRY.apps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FRY.app/FRY";
 			};
@@ -783,12 +729,12 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED3D44688087321BF4286FD5 /* Pods-FRY-FRYTests.release.xcconfig */;
+			baseConfigurationReference = D73D083ACCC3C5C90816B19E /* Pods-FRY-FRYTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = "FRYTests/Info.plist";
+				INFOPLIST_FILE = FRYTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -796,7 +742,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.FRY.apps";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FRY.apps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FRY.app/FRY";
 			};
@@ -804,7 +750,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 611ECFEE67FD81E41916C82B /* Pods-FRY.debug.xcconfig */;
+			baseConfigurationReference = 43FC90374DAE62E639E72B09 /* Pods-FRY.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -814,8 +760,7 @@
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = K6RAJ7URB9;
 				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = "FRY/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "F.R.Y";
+				INFOPLIST_FILE = FRY/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = F.R.Y;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -826,7 +771,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.FRY.apps";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FRY.apps;
 				PRODUCT_NAME = F.R.Y.;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FRY-Bridging-Header.h";
@@ -838,7 +783,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9B2895E8858488423945779 /* Pods-FRY.release.xcconfig */;
+			baseConfigurationReference = 7853116819181DD6A04C3C17 /* Pods-FRY.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -848,8 +793,7 @@
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = K6RAJ7URB9;
 				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = "FRY/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "F.R.Y";
+				INFOPLIST_FILE = FRY/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = F.R.Y;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -860,7 +804,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.FRY.apps";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FRY.apps;
 				PRODUCT_NAME = F.R.Y.;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FRY-Bridging-Header.h";
@@ -871,7 +815,6 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD6309A4CD96A05C6A3EC5E0 /* Pods-FRY-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -889,7 +832,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.FRY.apps";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FRY.apps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -899,7 +842,6 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16063B16ADF6F56113779DD6 /* Pods-FRY-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -917,7 +859,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.FRY.apps";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FRY.apps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -927,7 +869,6 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF391039DA8AD9D09F89C99D /* Pods-FRY-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -944,7 +885,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.FRY.apps";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FRY.apps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FRY-tvOS.app/FRY-tvOS";
@@ -954,7 +895,6 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 179D0F4886A19FC11870DC03 /* Pods-FRY-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -971,7 +911,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.FRY.apps";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FRY.apps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FRY-tvOS.app/FRY-tvOS";
@@ -983,8 +923,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1010,8 +951,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development: Krunal Vyas (Y4GCJ59C7L)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Krunal Vyas (Y4GCJ59C7L)";
 				COPY_PHASE_STRIP = NO;
+				CXX = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1028,15 +971,20 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)  ";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -1044,8 +992,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1071,8 +1020,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development: Krunal Vyas (Y4GCJ59C7L)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Krunal Vyas (Y4GCJ59C7L)";
 				COPY_PHASE_STRIP = YES;
+				CXX = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1082,14 +1034,19 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited)  ";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

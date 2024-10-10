@@ -1,9 +1,19 @@
-require_relative '../node_modules/react-native/scripts/react_native_pods'
-require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+# Resolve react_native_pods.rb with node to allow for hoisting
+require Pod::Executable.execute_command('node', ['-p',
+  'require.resolve(
+    "react-native/scripts/react_native_pods.rb",
+    {paths: [process.argv[1]]},
+  )', __dir__]).strip
 
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
+
+linkage = ENV['USE_FRAMEWORKS']
+if linkage != nil
+  Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
+  use_frameworks! :linkage => linkage.to_sym
+end
 
 target 'FRY' do
   config = use_native_modules!
@@ -14,27 +24,39 @@ target 'FRY' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-
   target 'FRYTests' do
     inherit! :complete
     # Pods for testing
   end
 
-  # Enables Flipper.
-  #
-  # Note that if you have use_frameworks! enabled, Flipper will not work and
-  # you should disable these next few lines.
-#  use_flipper!
-#  post_install do |installer|
-#    flipper_post_install(installer)
-#  end
-end
+  post_install do |installer|
+    react_native_post_install(
+      installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false
+    )
 
-target 'FRY-tvOS' do
-  # Pods for FRY-tvOS
-
-  target 'FRY-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
+    # This is necessary for Xcode 14, because it signs resource bundles by default
+    # when building for devices.
+    installer.target_installation_results.pod_target_installation_results
+      .each do |pod_name, target_installation_result|
+      target_installation_result.resource_bundle_targets.each do |resource_bundle_target|
+        resource_bundle_target.build_configurations.each do |config|
+          config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        end
+      end
+    end
+    installer.pods_project.targets.each do |target|
+      if target.name == 'BoringSSL-GRPC'
+        target.source_build_phase.files.each do |file|
+          if file.settings && file.settings['COMPILER_FLAGS']
+            flags = file.settings['COMPILER_FLAGS'].split
+            flags.reject! { |flag| flag == '-GCC_WARN_INHIBIT_ALL_WARNINGS' }
+            file.settings['COMPILER_FLAGS'] = flags.join(' ')
+          end
+        end
+      end
+    end
   end
 end
+
