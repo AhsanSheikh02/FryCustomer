@@ -1,4 +1,4 @@
-import { GoogleSignin } from '@react-native-community/google-signin';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { CommonActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';

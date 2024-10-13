@@ -3,7 +3,7 @@ import Global from '../../utils/global';
 
 //IMPORT REDUCER, INITIAL STATE AND ACTION TYPES
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {GoogleSignin} from '@react-native-community/google-signin';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {LoginManager} from 'react-native-fbsdk';
 import fetch from '../../services/fetch';
 import {
@@ -279,7 +279,10 @@ function AuthProvider(props) {
       await AsyncStorage.multiRemove(keys);
 
       //REMOVE SOCIAL MEDIA DATA
-      if (GoogleSignin.isSignedIn()) {
+      const userInfo = await GoogleSignin.getCurrentUser();
+      const isSignedIn = !!userInfo; // check if user info exists
+      console.log(isSignedIn);
+      if (isSignedIn) {
         GoogleSignin.signOut();
       }
       LoginManager.logOut();

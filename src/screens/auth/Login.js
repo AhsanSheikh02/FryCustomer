@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
     GoogleSignin,
     statusCodes,
-} from '@react-native-community/google-signin';
+} from '@react-native-google-signin/google-signin';
 import { CommonActions } from '@react-navigation/native';
 import React, { useEffect, useRef, useState } from 'react';
 import {
