@@ -244,10 +244,7 @@ export default function SubscriptionPage(props) {
       const Products = await RNIap.getSubscriptions(itemSubs);
       console.log('Available Products:', Products);
       if (Products.length === 0) {
-        addErrorLog(
-          'No Products Found',
-          'The getSubscriptions call returned an empty array',
-        );
+        addErrorLog('No Products Found', 'The getSubscriptions call returned an empty array');
       }
       // Store the full product information
       setProducts(Products);
@@ -284,18 +281,18 @@ export default function SubscriptionPage(props) {
   //   }
   // };
 
-  const requestIAPSubscription = async item => {
+  const requestIAPSubscription = async (item) => {
     setLoading(true);
     try {
       console.log('Requesting subscription for:', item.sku);
       const product = products.find(p => p.productId === item.sku);
-
+      
       if (!product) {
         throw new Error(`Product not found for sku: ${item.sku}`);
       }
 
       const subscriptionOffers = product.subscriptionOfferDetails;
-
+      
       if (!subscriptionOffers || subscriptionOffers.length === 0) {
         throw new Error(`No subscription offers found for sku: ${item.sku}`);
       }
@@ -304,7 +301,7 @@ export default function SubscriptionPage(props) {
         sku: item.sku,
         subscriptionOffers: subscriptionOffers.map(offer => ({
           sku: item.sku,
-          offerToken: offer.offerToken,
+          offerToken: offer.offerToken
         })),
         andDangerouslyFinishTransactionAutomaticallyIOS: false,
       });

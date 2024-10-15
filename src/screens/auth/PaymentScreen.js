@@ -4,13 +4,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Dimensions, Image, ImageBackground, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { LiteCreditCardInput } from 'react-native-credit-card-input';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import Stripe from 'react-native-stripe-api';
 import Toast from 'react-native-tiny-toast';
 import { CustomButton } from '../../components/Button';
 import { CustomText } from '../../components/Text';
 import { CustomTextInput } from '../../components/TextInput';
 import { useAuth } from '../../redux/providers/AuthProvider';
 import { colors, config } from '../../utils/constants';
+import Stripe from '../../services/Stripe';
 
 export default function PaymentScreen(props) {
     const { navigation } = props;
