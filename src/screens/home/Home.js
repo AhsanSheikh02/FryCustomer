@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Dimensions, FlatList, Image, Keyboard, Linking, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import Stripe from 'react-native-stripe-api';
 import Toast from 'react-native-tiny-toast';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { CustomButton } from '../../components/Button';
@@ -128,31 +127,7 @@ export default function Home(props) {
     useEffect(() => {
         callApiforCategory();
         callApiforBanners();
-        // generateToken()
-        // callApiforProfile()
     }, []);
-
-    async function generateToken() {
-        const client = new Stripe(config.stripe_api_key);
-        // Create a Stripe token with new card infos
-        const token = await client.createToken({
-            number: '4242424242424242',
-            exp_month: '05',
-            exp_year: '22',
-            cvc: '123',
-        });
-        console.log('token: ', token);
-    }
-
-    function goToURL(url) {
-        Linking.canOpenURL(url).then(supported => {
-            if (supported) {
-                Linking.openURL(url);
-            } else {
-                console.log('Don\'t know how to open URI: ' + url);
-            }
-        });
-    }
 
     function callApiforCategory() {
         // Toast.showLoading("Please wait..")
